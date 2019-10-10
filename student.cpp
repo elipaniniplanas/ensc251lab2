@@ -260,6 +260,42 @@ string compareResearchScore(const STUDENT& overallscore1, const STUDENT& overall
                 return "equal";
         }
 }
+string compareFirstName(const STUDENT& overallfname1, const STUDENT& overallfname2)
+{
+        STUDENT result1,result2;
+        result1.fname = overallfname1.score;
+        result2.fname = overallfname2.score;
+        if result1.fname < result2.fname
+        {
+                return "less";
+        }
+        else if result1.fname > result2.fname
+        {
+                return "greater";
+        }
+        else
+        {
+                return "equal";
+        }
+}
+string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname2)
+{
+        STUDENT result1,result2;
+        result1.lname = overallscore1.lname;
+        result2.lname = overallscore2.lname;
+        if result1.lname< result2.lname
+        {
+                return "less";
+        }
+        else if result1.lname > result2.lname
+        {
+                return "greater";
+        }
+        else
+        {
+                return "equal";
+        }
+}
 
         
         
