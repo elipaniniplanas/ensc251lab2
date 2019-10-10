@@ -224,6 +224,42 @@ string InternationalStudent::getcountry()
         return(country);
 }
 
+string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
+{
+        STUDENT result1,result2;
+        result1.cgpa = overallgpa1.cgpa;
+        result2.cgpa = overallgpa2.cgpa;
+        if result1.cgpa < result2.cgpa
+        {
+                return "less";
+        }
+        else if result1.cgpa > result.cgpa
+        {
+                return "greater";
+        }
+        else
+        {
+                return "equal";
+        }
+}
+string compareResearchScore(const STUDENT& overallscore1, const STUDENT& overallscore2)
+{
+        STUDENT result1,result2;
+        result1.score = overallscore1.score;
+        result2.score = overallscore2.score;
+        if result1.score < result2.score
+        {
+                return "less";
+        }
+        else if result1.score > result2.score
+        {
+                return "greater";
+        }
+        else
+        {
+                return "equal";
+        }
+}
 
         
         
