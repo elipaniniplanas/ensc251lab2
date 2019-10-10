@@ -67,10 +67,10 @@ public:
         //This is the accessor function for gpa (returns an int datatype)
         int getID();
         //This is the accessor function for id (returns an int datatype)
-        friend STUDENT compareCGPA(int cgpa);
-        friend STUDENT compareResearchScore(int score);
-        friend STUDENT compareFirstName(string first);
-        friend STUDENT compareLastName(string last);
+        friend STUDENT compareCGPA(int cgpa&);
+        friend STUDENT compareResearchScore(int score&);
+        friend STUDENT compareFirstName(string first&);
+        friend STUDENT compareLastName(string last&);
 
 private:
         string fname;//first name
