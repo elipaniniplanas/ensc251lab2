@@ -86,19 +86,27 @@ int ToeflScore::gettotalscore()
 //Student constructor
 STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
 {
-        //Error checking, making sure that the proper values are in range 
+        //Error checking, making sure that the proper values are in range
         if(cgpa > 4.3 || cgpa < 0)
         {
-                cout<<"sorry, but your CGPA is invalid";
+                cout<<"CGPA value is invalid, setting value to zero";
+                CGPA = 0.0;
+        }
+        else
+        {
+                CGPA = cgpa;
         }
         if(score < 0 || score > 100)
         {
-                cout<<"sorry, but your research score is invalid";
+                cout<<"Research score is invalid, setting value to zero";
+                SCORE = 0;
+        }
+        else
+        {
+                SCORE = score;
         }
         fname = first;
         lname = last;
-        CGPA = cgpa;
-        SCORE = score;
         ID = id;
 }
 STUDENT::STUDENT()
@@ -120,11 +128,27 @@ void STUDENT::setlname(string last)
 }
 void STUDENT::setCGPA(float cgpa)
 {
-        CGPA = cgpa;
+        if(cgpa > 4.3 || cgpa < 0)
+        {
+                cout<<"CGPA value is invalid, setting value to zero";
+                CGPA = 0.0;
+        }
+        else
+        {
+                CGPA = cgpa;
+        }
 }
 void STUDENT::setscore(int score)
 {
-        SCORE = score;
+        if(score < 0 || score > 100)
+        {
+                cout<<"Research score is invalid, setting value to zero";
+                SCORE = 0;
+        }
+        else
+        {
+                SCORE = score;
+        }
 }
 void STUDENT::setID(int id)
 {
@@ -223,7 +247,3 @@ string InternationalStudent::getcountry()
 {
         return(country);
 }
-
-
-        
-        
