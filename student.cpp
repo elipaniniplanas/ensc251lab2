@@ -167,7 +167,7 @@ void DomesticStudent::setprovince(string pv)
         province = pv;
 }
 //Accessor function for DomesticStudent
-string DomesticStudent::getprovince()
+string DomesticStudent::getprovince() const
 {
         return(province);
 }
