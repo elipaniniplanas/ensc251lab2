@@ -40,8 +40,9 @@ int main(){
   int Dstu_count = 1;
   // This int will increment each loop to generate a unique id for each student
   int ID_count = 20200000;
+  int counter1 = 0;
+  int counter2 = 0;
 	
-  int counter = 0;
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -77,13 +78,13 @@ int main(){
     Dstudent[counter].setscore(researchScore);
     Dstudent[counter].setID(ID_count);
     Dstudent[counter].setprovince(province);
-    counter++;
 
+	  
     //print the student info to the screen
-    cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
+    /*cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
 	 << Dstudent.getCGPA() << ", and research score of " << Dstudent.getscore() << ", the assigned ID is "
-	 << Dstudent.getID() << endl;
+	 << Dstudent.getID() << endl;*/
 
     //Generate a new ID and prepare to the next iteration of the loop
     Dstu_count++;
@@ -140,23 +141,23 @@ int main(){
     write = atoi(s_write.c_str());
 
     // Set all data to the Istudent object with mutator functions
-    Istudent.setfname(firstName);
-    Istudent.setlname(lastName);
-    Istudent.setCGPA(cgpa);
-    Istudent.setscore(researchScore);
-    Istudent.setID(ID_count);
-    Istudent.setcountry(country);
-    Istudent.settoefl(read,write,listen,speak);
-    Istudent.setID(ID_count);
+    Istudent[counter2].setfname(firstName);
+    Istudent[counter2].setlname(lastName);
+    Istudent[counter2].setCGPA(cgpa);
+    Istudent[counter2].setscore(researchScore);
+    Istudent[counter2].setID(ID_count);
+    Istudent[counter2].setcountry(country);
+    Istudent[counter2].settoefl(read,write,listen,speak);
+    Istudent[counter2].setID(ID_count);
 
     //print the student info to the screen
-    cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
+    /*cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
 	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
 	 << Istudent.getCGPA() << ", and research score of " << Istudent.getscore()
 	 << ", the assigned ID is " << Istudent.getID() << ", their toefl scores are: reading "
 	 << Istudent.gettoeflread() << ", writing "<< Istudent.gettoeflwrite() << ", listening "
 	 << Istudent.gettoefllisten() << ", speaking " << Istudent.gettoeflspeak() << ", and their total toefl score is "
-	 << Istudent.gettotal() <<endl;
+	 << Istudent.gettotal() <<endl;*/
 
     //Generate a new ID and prepare to the next iteration of the loop
     Istu_count++;
