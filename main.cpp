@@ -151,6 +151,8 @@ int main(){
     Istudent[counter2].settoefl(read,write,listen,speak);
     Istudent[counter2].setID(ID_count);
 
+	  
+    cout << counter2++ << " "<<Istudent[counter2]
     //print the student info to the screen
     /*cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
 	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
