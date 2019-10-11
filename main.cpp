@@ -24,8 +24,10 @@
 int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
+	
   DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
   InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
+	
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
@@ -38,6 +40,8 @@ int main(){
   int Dstu_count = 1;
   // This int will increment each loop to generate a unique id for each student
   int ID_count = 20200000;
+	
+  int counter = 0;
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -65,13 +69,15 @@ int main(){
     researchScore = atoi(s_researchScore.c_str());
 
     // Set all data to the Istudent object with mutator functions
-    Dstudent.setID(ID_count);
-    Dstudent.setfname(firstName);
-    Dstudent.setlname(lastName);
-    Dstudent.setCGPA(cgpa);
-    Dstudent.setscore(researchScore);
-    Dstudent.setID(ID_count);
-    Dstudent.setprovince(province);
+    
+    Dstudent[counter].setID(ID_count);
+    Dstudent[counter].setfname(firstName);
+    Dstudent[counter].setlname(lastName);
+    Dstudent[counter].setCGPA(cgpa);
+    Dstudent[counter].setscore(researchScore);
+    Dstudent[counter].setID(ID_count);
+    Dstudent[counter].setprovince(province);
+    counter++;
 
     //print the student info to the screen
     cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
