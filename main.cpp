@@ -24,8 +24,8 @@
 int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
-  DomesticStudent Dstudent; // Made an array of objects of DomesticStudent class
-  InternationalStudent Istudent; // Made an array of objects of InternationalStudent class
+  DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
+  InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
