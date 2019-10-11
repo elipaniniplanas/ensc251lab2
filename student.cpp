@@ -314,9 +314,20 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
                 return "equal";
         }
 }
-void bubblesort_CGPA()
+void swap(int *xp, int *yp)  
+{  
+    int temp = *xp;  
+    *xp = *yp;  
+    *yp = temp;  
+}  
+void bubblesort_CGPA(int arr[], int n)
 {
-        
+    int i, j;  
+    for (i = 0; i < n-1; i++)      
+    // Last i elements are already in place  
+    for (j = 0; j < n-i-1; j++)  
+        if (arr[j] > arr[j+1])  
+            swap(&arr[j], &arr[j+1]); 
 }
 
         
