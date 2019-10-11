@@ -227,13 +227,13 @@ string InternationalStudent::getcountry()
 string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
 {
         STUDENT result1,result2;
-        result1.cgpa = overallgpa1.cgpa;
-        result2.cgpa = overallgpa2.cgpa;
-        if result1.cgpa < result2.cgpa
+        result1.CGPA = overallgpa1.CGPA;
+        result2.CGPA = overallgpa2.CGPA;
+        if (result1.CGPA < result2.CGPA)
         {
                 return "less";
         }
-        else if result1.cgpa > result.cgpa
+        else if (result1.CGPA > result.CGPA)
         {
                 return "greater";
         }
@@ -245,13 +245,13 @@ string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
 string compareResearchScore(const STUDENT& overallscore1, const STUDENT& overallscore2)
 {
         STUDENT result1,result2;
-        result1.score = overallscore1.score;
-        result2.score = overallscore2.score;
-        if result1.score < result2.score
+        result1.SCORE = overallscore1.SCORE;
+        result2.SCORE = overallscore2.SCORE;
+        if (result1.SCORE < result2.SCORE)
         {
                 return "less";
         }
-        else if result1.score > result2.score
+        else if (result1.SCORE > result2.SCORE)
         {
                 return "greater";
         }
@@ -265,11 +265,11 @@ string compareFirstName(const STUDENT& overallfname1, const STUDENT& overallfnam
         STUDENT result1,result2;
         result1.fname = overallfname1.score;
         result2.fname = overallfname2.score;
-        if result1.fname < result2.fname
+        if (result1.fname < result2.fname)
         {
                 return "less";
         }
-        else if result1.fname > result2.fname
+        else if (result1.fname > result2.fname)
         {
                 return "greater";
         }
@@ -283,11 +283,11 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
         STUDENT result1,result2;
         result1.lname = overallscore1.lname;
         result2.lname = overallscore2.lname;
-        if result1.lname< result2.lname
+        if (result1.lname< result2.lname)
         {
                 return "less";
         }
-        else if result1.lname > result2.lname
+        else if (result1.lname > result2.lname)
         {
                 return "greater";
         }
