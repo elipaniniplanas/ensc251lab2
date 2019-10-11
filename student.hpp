@@ -92,7 +92,7 @@ public:
         void setprovince(string pv);
         //Accessor functions
         string getprovince() const;
-        friend ostream& operator <<(ostream& outs,  DomesticStudent& p);
+        friend ostream& operator <<(ostream& outs, const DomesticStudent& p);
 private:
         string province;
 };
@@ -107,7 +107,7 @@ public:
         //Mutator functions
         void setcountry(string co);
         //Accessor functions
-        string getcountry(); 
+        string getcountry() const; 
         //gets toefl value from Toeflscore class
         void settoefl(int read, int write, int listen, int speak);
         //outputs toefl values and total
