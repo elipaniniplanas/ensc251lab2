@@ -79,7 +79,7 @@ int main(){
     Dstudent[counter1].setID(ID_count);
     Dstudent[counter1].setprovince(province);
 
-    cout << Dstudent[counter1];
+    cout << counter1+1 << " " << Dstudent[counter1];
     //print the student info to the screen
     /*cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
