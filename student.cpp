@@ -62,23 +62,23 @@ void ToeflScore::settotalscore()
         totalscore = reading + writing + listening + speaking;
 }
 //Below are the accessor functions for the ToeflScore class
-int ToeflScore::getreading()
+int ToeflScore::getreading() const
 {
         return(reading);
 }
-int ToeflScore::getwriting()
+int ToeflScore::getwriting() const
 {
         return(writing);
 }
-int ToeflScore::getlistening()
+int ToeflScore::getlistening() const
 {
         return(listening);
 }
-int ToeflScore::getspeaking()
+int ToeflScore::getspeaking() const
 {
         return(speaking);
 }
-int ToeflScore::gettotalscore()
+int ToeflScore::gettotalscore() const
 {
         return(totalscore);
 }
@@ -131,23 +131,23 @@ void STUDENT::setID(int id)
         ID = id;
 }
 //Below are the accessor functions for the Student class
-string STUDENT::getfname()
+string STUDENT::getfname() const
 {
         return(fname);
 }
-string STUDENT::getlname()
+string STUDENT::getlname() const
 {
         return(lname);
 }
-float STUDENT::getCGPA()
+float STUDENT::getCGPA() const
 {
         return(CGPA);
 }
-int STUDENT::getscore()
+int STUDENT::getscore() const
 {
         return(SCORE);
 }
-int STUDENT::getID()
+int STUDENT::getID() const
 {
         return(ID);
 }
@@ -172,7 +172,7 @@ string DomesticStudent::getprovince()
         return(province);
 }
 
-ostream& operator <<(ostream& outs, DomesticStudent& p)
+ostream& operator <<(ostream& outs, const DomesticStudent& p)
 {
         outs << "Domestic student i " << " " << p.getfname() << " "
 	 << p.getlname() << " from " << p.getprovince() << " province has cgpa of "
@@ -206,28 +206,28 @@ void InternationalStudent::settoefl(int read, int write, int listen, int speak)
         TOEFL.settotalscore();
 }
 //As the same situation as above, to access the values of the TOEFL object, ToeflScore's accessor functions are used in these accessor functions
-int InternationalStudent::gettoeflread()
+int InternationalStudent::gettoeflread() const
 {
         return TOEFL.getreading();
 }
-int InternationalStudent::gettoeflwrite()
+int InternationalStudent::gettoeflwrite() const
 {
         return TOEFL.getwriting();
 }
-int InternationalStudent::gettoefllisten()
+int InternationalStudent::gettoefllisten() const
 {
         return TOEFL.getlistening();
 }
-int InternationalStudent::gettoeflspeak()
+int InternationalStudent::gettoeflspeak() const
 {
         return TOEFL.getspeaking();
 }
-int InternationalStudent::gettotal()
+int InternationalStudent::gettotal() const
 {
         return TOEFL.gettotalscore();
 }
 //Accessor Functions for the InternationalStudent class
-string InternationalStudent::getcountry()
+string InternationalStudent::getcountry() const
 {
         return(country);
 }
