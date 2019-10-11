@@ -174,7 +174,7 @@ string DomesticStudent::getprovince() const
 
 ostream& operator <<(ostream& outs, const DomesticStudent& p)
 {
-        outs << "Domestic student i " << " " << p.getfname() << " "
+        outs << "Domestic student" << " " << p.getfname() << " "
 	 << p.getlname() << " from " << p.getprovince() << " province has cgpa of "
 	 << p.getCGPA() << ", and research score of " << p.getscore() << ", the assigned ID is "
 	 << p.getID() << endl;
@@ -230,6 +230,10 @@ int InternationalStudent::gettotal() const
 string InternationalStudent::getcountry() const
 {
         return(country);
+}
+ostream& operator <<(ostream& outs, const InternationalStudent& p)
+{
+	
 }
 
 string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
