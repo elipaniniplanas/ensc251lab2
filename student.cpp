@@ -172,7 +172,7 @@ string DomesticStudent::getprovince()
         return(province);
 }
 
-ostream& operator <<(ostream& outs, const DomesticStudent& p)
+ostream& operator <<(ostream& outs, DomesticStudent& p)
 {
         outs << "Domestic student i " << " " << p.getfname() << " "
 	 << p.getlname() << " from " << p.getprovince() << " province has cgpa of "
