@@ -174,7 +174,7 @@ string DomesticStudent::getprovince()
 
 ostream& opertor <<(ostream& outs, const DomesticStudent& p)
 {
-        cout << "Domestic student i " << " " << p.getfname() << " "
+        outs << "Domestic student i " << " " << p.getfname() << " "
 	 << p.getlname() << " from " << p.getprovince() << " province has cgpa of "
 	 << p.getCGPA() << ", and research score of " << p.getscore() << ", the assigned ID is "
 	 << p.getID() << endl;
