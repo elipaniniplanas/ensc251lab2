@@ -233,7 +233,7 @@ string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
         {
                 return "less";
         }
-        else if (result1.CGPA > result.CGPA)
+        else if (result1.CGPA > result2.CGPA)
         {
                 return "greater";
         }
@@ -263,8 +263,8 @@ string compareResearchScore(const STUDENT& overallscore1, const STUDENT& overall
 string compareFirstName(const STUDENT& overallfname1, const STUDENT& overallfname2)
 {
         STUDENT result1,result2;
-        result1.fname = overallfname1.score;
-        result2.fname = overallfname2.score;
+        result1.fname = overallfname1.fname;
+        result2.fname = overallfname2.fname;
         if (result1.fname < result2.fname)
         {
                 return "less";
