@@ -71,7 +71,7 @@ public:
         friend string compareResearchScore(const STUDENT&,const STUDENT&);
         friend string compareFirstName(const STUDENT&,const STUDENT&);
         friend string compareLastName(const STUDENT&,const STUDENT&);
-        friend void bubblesort(const STUDENT&,const STUDENT&);
+        friend void bubblesort_CGPA();
 
 private:
         string fname;//first name
