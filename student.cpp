@@ -281,8 +281,8 @@ string compareFirstName(const STUDENT& overallfname1, const STUDENT& overallfnam
 string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname2)
 {
         STUDENT result1,result2;
-        result1.lname = overallscore1.lname;
-        result2.lname = overallscore2.lname;
+        result1.lname = overalllname1.lname;
+        result2.lname = overalllname2.lname;
         if (result1.lname< result2.lname)
         {
                 return "less";
