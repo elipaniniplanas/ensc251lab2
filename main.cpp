@@ -71,13 +71,13 @@ int main(){
 
     // Set all data to the Istudent object with mutator functions
     
-    Dstudent[counter].setID(ID_count);
-    Dstudent[counter].setfname(firstName);
-    Dstudent[counter].setlname(lastName);
-    Dstudent[counter].setCGPA(cgpa);
-    Dstudent[counter].setscore(researchScore);
-    Dstudent[counter].setID(ID_count);
-    Dstudent[counter].setprovince(province);
+    Dstudent[counter1].setID(ID_count);
+    Dstudent[counter1].setfname(firstName);
+    Dstudent[counter1].setlname(lastName);
+    Dstudent[counter1].setCGPA(cgpa);
+    Dstudent[counter1].setscore(researchScore);
+    Dstudent[counter1].setID(ID_count);
+    Dstudent[counter1].setprovince(province);
 
 	  
     //print the student info to the screen
@@ -87,6 +87,7 @@ int main(){
 	 << Dstudent.getID() << endl;*/
 
     //Generate a new ID and prepare to the next iteration of the loop
+    counter1++;
     Dstu_count++;
     ID_count++;
   }
@@ -160,6 +161,7 @@ int main(){
 	 << Istudent.gettotal() <<endl;*/
 
     //Generate a new ID and prepare to the next iteration of the loop
+    counter2++;
     Istu_count++;
     ID_count++;
   }
