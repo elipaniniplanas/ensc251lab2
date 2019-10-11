@@ -116,6 +116,7 @@ public:
         int gettoefllisten() const;
         int gettoeflspeak() const;
         int gettotal() const;
+        friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
         
 private:
         string country;
