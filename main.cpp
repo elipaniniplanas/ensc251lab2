@@ -96,6 +96,9 @@ int main(){
   getline(internationalFile, line);//this skips the first line which is about the file format
   //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
+	
+	
+	
   while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
