@@ -92,7 +92,7 @@ public:
         void setprovince(string pv);
         //Accessor functions
         string getprovince();
-        friend ostream& operator <<(ostream& outs, const DomesticStudent& p);
+        friend ostream& operator <<(ostream& outs,  DomesticStudent& p);
 private:
         string province;
 };
