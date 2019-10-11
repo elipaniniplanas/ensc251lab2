@@ -115,7 +115,7 @@ public:
         int gettoeflwrite() const;
         int gettoefllisten() const;
         int gettoeflspeak() const;
-        int gettotal(); const
+        int gettotal() const;
         
 private:
         string country;
