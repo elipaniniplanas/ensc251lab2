@@ -171,6 +171,14 @@ string DomesticStudent::getprovince()
 {
         return(province);
 }
+
+ostream& opertor <<(ostream& outs, const DomesticStudent& p)
+{
+        cout << "Domestic student i " << " " << p.getfname() << " "
+	 << p.getlname() << " from " << p.getprovince() << " province has cgpa of "
+	 << p.getCGPA() << ", and research score of " << p.getscore() << ", the assigned ID is "
+	 << p.getID() << endl;
+}
 //Constructor for the InternationalStudent class
 InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak):
         STUDENT(first, last, cgpa, score, id)
