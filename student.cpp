@@ -233,13 +233,13 @@ string InternationalStudent::getcountry() const
 }
 ostream& operator <<(ostream& outs, const InternationalStudent& p)
 {
-	outs << "International student" << " " << Istudent.getfname() << " "
-	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
-	 << Istudent.getCGPA() << ", and research score of " << Istudent.getscore()
-	 << ", the assigned ID is " << Istudent.getID() << ", their toefl scores are: reading "
-	 << Istudent.gettoeflread() << ", writing "<< Istudent.gettoeflwrite() << ", listening "
-	 << Istudent.gettoefllisten() << ", speaking " << Istudent.gettoeflspeak() << ", and their total toefl score is "
-	 << Istudent.gettotal() <<endl;
+	outs << "International student" << " " << p.getfname() << " "
+	 << p.getlname() << " from " << p.getcountry() << " country has cgpa of "
+	 << p.getCGPA() << ", and research score of " << p.getscore()
+	 << ", the assigned ID is " << p.getID() << ", their toefl scores are: reading "
+	 << p.gettoeflread() << ", writing "<< p.gettoeflwrite() << ", listening "
+	 << p.gettoefllisten() << ", speaking " << p.gettoeflspeak() << ", and their total toefl score is "
+	 << p.gettotal() <<endl;
 }
 
 string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
