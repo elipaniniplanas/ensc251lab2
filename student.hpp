@@ -55,11 +55,16 @@ public:
   float getCGPA() const;
   int getscore() const;
   int getID() const;
+
   friend string compareCGPA(const STUDENT&,const STUDENT&);
   friend string compareResearchScore(const STUDENT&,const STUDENT&);
   friend string compareFirstName(const STUDENT&,const STUDENT&);
   friend string compareLastName(const STUDENT&,const STUDENT&);
+
   friend void bubblesort_CGPA(STUDNET&, int);
+  friend void bubblesort_ResearchScore(STUDNET&, int);
+  friend void bubblesort_FirstName(STUDNET&, int);
+  friend void bubblesort_LastName(STUDNET&, int);
 
 private:
         string fname;//first name

@@ -24,7 +24,8 @@
 int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
-
+  string userInStu;
+  sring userInComp;
   DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
   InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
 
@@ -157,6 +158,31 @@ int main(){
   }
   //close your file
   internationalFile.close();
+
+  retry:
+  cout << "Sort:\nDomestic students; type 'D' or 'd'\nInternational students; type 'I' or 'i'\nINPUT: ";
+  cin >> userInStu;
+  cout << endl;
+  if ((userInStu == "d")||(userInStu == "D"))
+  {}
+  if ((userInStu == "i")||(userInStu == "I"))
+  {}
+  else
+  {
+    cout << "INPUT ERROR\n";
+    goto retry;
+  }
+  cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
+  cin >> userInComp;
+  cout << endl;
+  if ((userInStu == "c")||(userInStu == "C"))
+  {}
+  if ((userInStu == "r")||(userInStu == "R"))
+  {}
+  if ((userInStu == "f")||(userInStu == "F"))
+  {}
+  if ((userInStu == "l")||(userInStu == "L"))
+  {}
 
   return 0;
 }

@@ -410,7 +410,7 @@ void bubblesort_CGPA(STUDNET& arr[], int n) // n is the number of elements in th
       }
     }
 }
-void bubblesort_(STUDNET arr[], int n) // n is the number of elements in the array
+void bubblesort_ResearchScore(STUDNET arr[], int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -419,7 +419,49 @@ void bubblesort_(STUDNET arr[], int n) // n is the number of elements in the arr
       disorganized = FALSE;
       for (j = 0; j < n-i-1; j++)
       {
-        if (compareCGPA(*arr[j], *arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+        if (compareResearchScore(*arr[j], *arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+        {
+          swap(&arr[j], &arr[j+1]);
+          disorganized = TRUE;
+        }
+      }
+      if (!disorganized)
+      {
+        break;
+      }
+    }
+}
+void bubblesort_FirstName(STUDNET& arr[], int n) // n is the number of elements in the array
+{
+    int i, j;
+    bool disorganized;
+    for (i = 0; i < n-1; i++)
+    {
+      disorganized = FALSE;
+      for (j = 0; j < n-i-1; j++)
+      {
+        if (compareFirstName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+        {
+          swap(&arr[j], &arr[j+1]);
+          disorganized = TRUE;
+        }
+      }
+      if (!disorganized)
+      {
+        break;
+      }
+    }
+}
+void bubblesort_LastName(STUDNET& arr[], int n) // n is the number of elements in the array
+{
+    int i, j;
+    bool disorganized;
+    for (i = 0; i < n-1; i++)
+    {
+      disorganized = FALSE;
+      for (j = 0; j < n-i-1; j++)
+      {
+        if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
           disorganized = TRUE;
