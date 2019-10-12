@@ -24,10 +24,10 @@
 int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
-	
+
   DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
   InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
-	
+
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
@@ -42,7 +42,7 @@ int main(){
   int ID_count = 20200000;
   int counter1 = 0;
   int counter2 = 0;
-	
+
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -56,21 +56,16 @@ int main(){
     float cgpa;
     int researchScore;
 
-    //get firstName separated by comma
     getline(ss, firstName, ',');
-    //get lastName separated by comma
     getline(ss, lastName, ',');
-    //get province separated by comma
     getline(ss, province, ',');
-    //get cpga separated by comma, and convert string to float
     getline(ss, s_cgpa, ',');
     cgpa = atof(s_cgpa.c_str());
-    //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
 
     // Set all data to the Istudent object with mutator functions
-    
+
     Dstudent[counter1].setID(ID_count);
     Dstudent[counter1].setfname(firstName);
     Dstudent[counter1].setlname(lastName);
@@ -104,9 +99,9 @@ int main(){
   getline(internationalFile, line);//this skips the first line which is about the file format
   //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
-	
-	
-	
+
+
+
   while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -119,19 +114,13 @@ int main(){
     float cgpa;
     int researchScore, read, listen, speak, write;
 
-    //get firstName separated by comma
     getline(ss, firstName, ',');
-    //get lastName separated by comma
     getline(ss, lastName, ',');
-    //get country separated by comma
     getline(ss, country, ',');
-    //get cpga separated by comma, and convert string to float
     getline(ss, s_cgpa, ',');
     cgpa = atof(s_cgpa.c_str());
-    //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
-    //get toeflscores, each seperated by commas, and convert each in to int
     getline(ss, s_read, ',');
     read = atoi(s_read.c_str());
     getline(ss, s_listen, ',');

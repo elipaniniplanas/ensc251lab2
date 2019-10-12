@@ -56,7 +56,7 @@ ToeflScore::ToeflScore()
 //Below are the mutator functions for the ToeflScore class
 void ToeflScore::setreading(int read)
 {
-        if(read <0 || read > 30)
+        if(read < 0 || read > 30)
         {
                 cout << "Reading toeflScore is invalid, setting value to zero\n";
                 reading = 0;
@@ -68,38 +68,38 @@ void ToeflScore::setreading(int read)
 }
 void ToeflScore::setwriting(int write)
 {
-        if(read <0 || read > 30)
+        if(write < 0 || write > 30)
         {
-          cout << "Reading toeflScore is invalid, setting value to zero\n";
-          reading = 0;
+          cout << "Writing toeflScore is invalid, setting value to zero\n";
+          writing = 0;
   }
   else
   {
-          reading = read;
+          writeing = write;
   }
 }
 void ToeflScore::setlistening(int listen)
 {
-  if(read <0 || read > 30)
+  if(listen < 0 || listen > 30)
   {
-          cout << "Reading toeflScore is invalid, setting value to zero\n";
-          reading = 0;
+          cout << "listening toeflScore is invalid, setting value to zero\n";
+          listening = 0;
   }
   else
   {
-          reading = read;
+          listening = listen;
   }
 }
 void ToeflScore::setspeaking(int speak)
 {
-  if(read <0 || read > 30)
+  if(speak < 0 || speak > 30)
   {
-          cout << "Reading toeflScore is invalid, setting value to zero\n";
-          reading = 0;
+          cout << "Speaking toeflScore is invalid, setting value to zero\n";
+          speaking = 0;
   }
   else
   {
-          reading = read;
+          speaking = speak;
   }
 }
 void ToeflScore::settotalscore()
@@ -134,16 +134,24 @@ STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
         //Error checking, making sure that the proper values are in range
         if(cgpa > 4.3 || cgpa < 0)
         {
-                cout<<"sorry, but your CGPA is invalid";
+                cout<<"CGPA value is invalid, setting value to zero";
+                CGPA = 0.0;
+        }
+        else
+        {
+                CGPA = cgpa;
         }
         if(score < 0 || score > 100)
         {
-                cout<<"sorry, but your research score is invalid";
+                cout<<"Research score is invalid, setting value to zero";
+                SCORE = 0;
+        }
+        else
+        {
+                SCORE = score;
         }
         fname = first;
         lname = last;
-        CGPA = cgpa;
-        SCORE = score;
         ID = id;
 }
 STUDENT::STUDENT()
@@ -362,7 +370,7 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
         STUDENT result1,result2;
         result1.lname = overalllname1.lname;
         result2.lname = overalllname2.lname;
-        if (result1.lname< result2.lname)
+        if (result1.lname < result2.lname)
         {
                 return "less";
         }
@@ -381,12 +389,45 @@ void swap(int *xp, int *yp)
     *xp = *yp;
     *yp = temp;
 }
-void bubblesort_CGPA(int arr[], int n)
+void bubblesort_CGPA(STUDNET& arr[], int n) // n is the number of elements in the array
 {
     int i, j;
+    bool disorganized;
     for (i = 0; i < n-1; i++)
-    // Last i elements are already in place
-    for (j = 0; j < n-i-1; j++)
-        if (arr[j] > arr[j+1])
-            swap(&arr[j], &arr[j+1]);
+    {
+      disorganized = FALSE;
+      for (j = 0; j < n-i-1; j++)
+      {
+        if (compareCGPA(*arr[j], *arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+        {
+          swap(&arr[j], &arr[j+1]);
+          disorganized = TRUE;
+        }
+      }
+      if (!disorganized)
+      {
+        break;
+      }
+    }
+}
+void bubblesort_(STUDNET arr[], int n) // n is the number of elements in the array
+{
+    int i, j;
+    bool disorganized;
+    for (i = 0; i < n-1; i++)
+    {
+      disorganized = FALSE;
+      for (j = 0; j < n-i-1; j++)
+      {
+        if (compareCGPA(*arr[j], *arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+        {
+          swap(&arr[j], &arr[j+1]);
+          disorganized = TRUE;
+        }
+      }
+      if (!disorganized)
+      {
+        break;
+      }
+    }
 }

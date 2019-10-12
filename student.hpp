@@ -43,35 +43,23 @@ private:
 class STUDENT
 {
 public:
-        STUDENT(string first, string last, float cgpa, int score, int id);
-        //This is the constructor function
-        STUDENT();
-        //here
-        void setfname(string first);
-        //This is the mutator function for first name (takes datatype string for input)
-        void setlname(string last);
-        //This is the mutator function for last name (takes datatype string for input)
-        void setCGPA(float cgpa);
-        //This is the mutator function for gpa (takes datatype float for input)
-        void setscore(int score);
-        //This is the mutator function for the research-score (takes datatype int for input)
-        void setID(int id);
-        //This is the mutator function for id (takes datatype int for input)
-        string getfname() const;
-        //This is the accessor function for first name (returns a string datatype)
-        string getlname() const;
-        //This is the accessor function for last name (returns a string datatype)
-        float getCGPA() const;
-        //This is the accessor function for gpa (returns a float datatype)
-        int getscore() const;
-        //This is the accessor function for gpa (returns an int datatype)
-        int getID() const;
-        //This is the accessor function for id (returns an int datatype)
-        friend string compareCGPA(const STUDENT&,const STUDENT&);
-        friend string compareResearchScore(const STUDENT&,const STUDENT&);
-        friend string compareFirstName(const STUDENT&,const STUDENT&);
-        friend string compareLastName(const STUDENT&,const STUDENT&);
-        friend void bubblesort_CGPA();
+  STUDENT(string first, string last, float cgpa, int score, int id);
+  STUDENT();
+  void setfname(string);
+  void setlname(string);
+  void setCGPA(float);
+  void setscore(int);
+  void setID(int);
+  string getfname() const;
+  string getlname() const;
+  float getCGPA() const;
+  int getscore() const;
+  int getID() const;
+  friend string compareCGPA(const STUDENT&,const STUDENT&);
+  friend string compareResearchScore(const STUDENT&,const STUDENT&);
+  friend string compareFirstName(const STUDENT&,const STUDENT&);
+  friend string compareLastName(const STUDENT&,const STUDENT&);
+  friend void bubblesort_CGPA(STUDNET&, int);
 
 private:
         string fname;//first name
@@ -100,14 +88,14 @@ private:
 
 class InternationalStudent : public STUDENT
 {
-public:    
+public:
         //Constructors for InternationalStudent
         InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak);
         InternationalStudent();
         //Mutator functions
         void setcountry(string co);
         //Accessor functions
-        string getcountry() const; 
+        string getcountry() const;
         //gets toefl value from Toeflscore class
         void settoefl(int read, int write, int listen, int speak);
         //outputs toefl values and total
@@ -117,7 +105,7 @@ public:
         int gettoeflspeak() const;
         int gettotal() const;
         friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
-        
+
 private:
         string country;
         ToeflScore TOEFL;
