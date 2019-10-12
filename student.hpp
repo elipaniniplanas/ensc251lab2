@@ -21,15 +21,15 @@ public:
         //This is the mutator function for the speaking score
         void settotalscore();
         //This is the mutator function for the sum of all of the scores in an object
-        int getreading();
+        int getreading() const;
         //This is the accessor function for the reading score
-        int getwriting();
+        int getwriting() const;
         //This is the accessor function for the writing score
-        int getlistening();
+        int getlistening() const;
         //This is the accessor function for the listening score
-        int getspeaking();
+        int getspeaking() const;
         //This is the accessor function for the speaking score
-        int gettotalscore();
+        int gettotalscore() const;
         //This is the accessor function for the sum of all of the scores in an object
 
 private:
@@ -57,16 +57,21 @@ public:
         //This is the mutator function for the research-score (takes datatype int for input)
         void setID(int id);
         //This is the mutator function for id (takes datatype int for input)
-        string getfname();
+        string getfname() const;
         //This is the accessor function for first name (returns a string datatype)
-        string getlname();
+        string getlname() const;
         //This is the accessor function for last name (returns a string datatype)
-        float getCGPA();
+        float getCGPA() const;
         //This is the accessor function for gpa (returns a float datatype)
-        int getscore();
+        int getscore() const;
         //This is the accessor function for gpa (returns an int datatype)
-        int getID();
+        int getID() const;
         //This is the accessor function for id (returns an int datatype)
+        friend string compareCGPA(const STUDENT&,const STUDENT&);
+        friend string compareResearchScore(const STUDENT&,const STUDENT&);
+        friend string compareFirstName(const STUDENT&,const STUDENT&);
+        friend string compareLastName(const STUDENT&,const STUDENT&);
+        friend void bubblesort_CGPA();
 
 private:
         string fname;//first name
@@ -86,7 +91,8 @@ public:
         //Mutator functions
         void setprovince(string pv);
         //Accessor functions
-        string getprovince();
+        string getprovince() const;
+        friend ostream& operator <<(ostream& outs, const DomesticStudent& p);
 private:
         string province;
 };
@@ -101,15 +107,16 @@ public:
         //Mutator functions
         void setcountry(string co);
         //Accessor functions
-        string getcountry(); 
+        string getcountry() const; 
         //gets toefl value from Toeflscore class
         void settoefl(int read, int write, int listen, int speak);
         //outputs toefl values and total
-        int gettoeflread();
-        int gettoeflwrite();
-        int gettoefllisten();
-        int gettoeflspeak();
-        int gettotal();
+        int gettoeflread() const;
+        int gettoeflwrite() const;
+        int gettoefllisten() const;
+        int gettoeflspeak() const;
+        int gettotal() const;
+        friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
         
 private:
         string country;

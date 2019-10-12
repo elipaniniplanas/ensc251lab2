@@ -24,8 +24,10 @@
 int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
-  DomesticStudent Dstudent; // Made an array of objects of DomesticStudent class
-  InternationalStudent Istudent; // Made an array of objects of InternationalStudent class
+
+  DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
+  InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
+
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
@@ -38,6 +40,9 @@ int main(){
   int Dstu_count = 1;
   // This int will increment each loop to generate a unique id for each student
   int ID_count = 20200000;
+  int counter1 = 0;
+  int counter2 = 0;
+
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -51,35 +56,32 @@ int main(){
     float cgpa;
     int researchScore;
 
-    //get firstName separated by comma
     getline(ss, firstName, ',');
-    //get lastName separated by comma
     getline(ss, lastName, ',');
-    //get province separated by comma
     getline(ss, province, ',');
-    //get cpga separated by comma, and convert string to float
     getline(ss, s_cgpa, ',');
     cgpa = atof(s_cgpa.c_str());
-    //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
 
     // Set all data to the Istudent object with mutator functions
-    Dstudent.setID(ID_count);
-    Dstudent.setfname(firstName);
-    Dstudent.setlname(lastName);
-    Dstudent.setCGPA(cgpa);
-    Dstudent.setscore(researchScore);
-    Dstudent.setID(ID_count);
-    Dstudent.setprovince(province);
+    Dstudent[counter1].setID(ID_count);
+    Dstudent[counter1].setfname(firstName);
+    Dstudent[counter1].setlname(lastName);
+    Dstudent[counter1].setCGPA(cgpa);
+    Dstudent[counter1].setscore(researchScore);
+    Dstudent[counter1].setID(ID_count);
+    Dstudent[counter1].setprovince(province);
 
+    cout << counter1+1 << " " << Dstudent[counter1];
     //print the student info to the screen
-    cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
+    /*cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
 	 << Dstudent.getCGPA() << ", and research score of " << Dstudent.getscore() << ", the assigned ID is "
-	 << Dstudent.getID() << endl;
+	 << Dstudent.getID() << endl;*/
 
     //Generate a new ID and prepare to the next iteration of the loop
+    counter1++;
     Dstu_count++;
     ID_count++;
   }
@@ -96,6 +98,9 @@ int main(){
   getline(internationalFile, line);//this skips the first line which is about the file format
   //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
+
+
+
   while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -108,19 +113,13 @@ int main(){
     float cgpa;
     int researchScore, read, listen, speak, write;
 
-    //get firstName separated by comma
     getline(ss, firstName, ',');
-    //get lastName separated by comma
     getline(ss, lastName, ',');
-    //get country separated by comma
     getline(ss, country, ',');
-    //get cpga separated by comma, and convert string to float
     getline(ss, s_cgpa, ',');
     cgpa = atof(s_cgpa.c_str());
-    //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
-    //get toeflscores, each seperated by commas, and convert each in to int
     getline(ss, s_read, ',');
     read = atoi(s_read.c_str());
     getline(ss, s_listen, ',');
@@ -131,25 +130,27 @@ int main(){
     write = atoi(s_write.c_str());
 
     // Set all data to the Istudent object with mutator functions
-    Istudent.setfname(firstName);
-    Istudent.setlname(lastName);
-    Istudent.setCGPA(cgpa);
-    Istudent.setscore(researchScore);
-    Istudent.setID(ID_count);
-    Istudent.setcountry(country);
-    Istudent.settoefl(read,write,listen,speak);
-    Istudent.setID(ID_count);
+    Istudent[counter2].setfname(firstName);
+    Istudent[counter2].setlname(lastName);
+    Istudent[counter2].setCGPA(cgpa);
+    Istudent[counter2].setscore(researchScore);
+    Istudent[counter2].setID(ID_count);
+    Istudent[counter2].setcountry(country);
+    Istudent[counter2].settoefl(read,write,listen,speak);
+    Istudent[counter2].setID(ID_count);
 
+    cout << counter2+1 << " " << Istudent[counter2];
     //print the student info to the screen
-    cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
+    /*cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
 	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
 	 << Istudent.getCGPA() << ", and research score of " << Istudent.getscore()
 	 << ", the assigned ID is " << Istudent.getID() << ", their toefl scores are: reading "
 	 << Istudent.gettoeflread() << ", writing "<< Istudent.gettoeflwrite() << ", listening "
 	 << Istudent.gettoefllisten() << ", speaking " << Istudent.gettoeflspeak() << ", and their total toefl score is "
-	 << Istudent.gettotal() <<endl;
+	 << Istudent.gettotal() <<endl;*/
 
     //Generate a new ID and prepare to the next iteration of the loop
+    counter2++;
     Istu_count++;
     ID_count++;
   }
