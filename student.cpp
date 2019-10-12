@@ -398,7 +398,7 @@ void bubblesort_CGPA(STUDNET& arr[], int n) // n is the number of elements in th
       disorganized = FALSE;
       for (j = 0; j < n-i-1; j++)
       {
-        if (compareCGPA(*arr[j], *arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+        if (compareCGPA(arr[j], arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
           disorganized = TRUE;
