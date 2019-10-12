@@ -5,31 +5,44 @@
 //ToeflScore constructor
 ToeflScore::ToeflScore(int read, int write, int listen, int speak)
 {
-        //Error checking to make sure the values are in range
-        if(read <0 || read > 30)
-        {
-                cout << "sorry, your reading toeflScore is invalid";
-        }
-
-        if(write <0 || write > 30)
-        {
-                cout << "sorry, your writing toeflScore is invalid";
-        }
-
-        if(listen <0 || listen > 30)
-        {
-                cout << "sorry, your listening toeflScore is invalid";
-        }
-
-        if(speak <0 || speak > 30)
-        {
-                cout << "sorry, your speaking toeflScore is invalid";
-        }
-        reading = read;
-        writing = write;
-        listening = listen;
-        speaking = speak;
-        totalscore = read + write + listen + speak;
+  //Error checking to make sure the values are in range
+  if(read <0 || read > 30)
+  {
+          cout << "Reading toeflScore is invalid, setting value to zero\n";
+          reading = 0;
+  }
+  else
+  {
+          reading = read;
+  }
+  if(write <0 || write > 30)
+  {
+          cout << "Writing toeflScore is invalid, setting value to zero\n";
+          writing = 0;
+  }
+  else
+  {
+          writing = write;
+  }
+  if(listen <0 || listen > 30)
+  {
+          cout << "Listening toeflScore is invalid, setting value to zero\n";
+          listening = 0;
+  }
+  else
+  {
+          listening = listen;
+  }
+  if(speak <0 || speak > 30)
+  {
+          cout << "Speaking toeflScore is invalid, setting value to zero\n";
+          speaking = 0;
+  }
+  else
+  {
+          speaking = speak;
+  }
+  totalscore = reading + writing + listening + speaking;
 }
 ToeflScore::ToeflScore()
 {
@@ -40,23 +53,55 @@ ToeflScore::ToeflScore()
         totalscore = 0;
 }
 //Below are the mutator functions for the ToeflScore class
+//Below are the mutator functions for the ToeflScore class
 void ToeflScore::setreading(int read)
 {
-        reading = read;
+        if(read <0 || read > 30)
+        {
+                cout << "Reading toeflScore is invalid, setting value to zero\n";
+                reading = 0;
+        }
+        else
+        {
+                reading = read;
+        }
 }
 void ToeflScore::setwriting(int write)
 {
-        writing = write;
+        if(read <0 || read > 30)
+        {
+          cout << "Reading toeflScore is invalid, setting value to zero\n";
+          reading = 0;
+  }
+  else
+  {
+          reading = read;
+  }
 }
 void ToeflScore::setlistening(int listen)
 {
-        listening = listen;
+  if(read <0 || read > 30)
+  {
+          cout << "Reading toeflScore is invalid, setting value to zero\n";
+          reading = 0;
+  }
+  else
+  {
+          reading = read;
+  }
 }
 void ToeflScore::setspeaking(int speak)
 {
-        speaking = speak;
+  if(read <0 || read > 30)
+  {
+          cout << "Reading toeflScore is invalid, setting value to zero\n";
+          reading = 0;
+  }
+  else
+  {
+          reading = read;
+  }
 }
-//This sets the sum of all of the scores in a ToeflScore object
 void ToeflScore::settotalscore()
 {
         totalscore = reading + writing + listening + speaking;
@@ -86,7 +131,7 @@ int ToeflScore::gettotalscore() const
 //Student constructor
 STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
 {
-        //Error checking, making sure that the proper values are in range 
+        //Error checking, making sure that the proper values are in range
         if(cgpa > 4.3 || cgpa < 0)
         {
                 cout<<"sorry, but your CGPA is invalid";
@@ -120,11 +165,27 @@ void STUDENT::setlname(string last)
 }
 void STUDENT::setCGPA(float cgpa)
 {
-        CGPA = cgpa;
+        if(cgpa > 4.3 || cgpa < 0)
+        {
+                cout<<"CGPA value is invalid, setting value to zero";
+                CGPA = 0.0;
+        }
+        else
+        {
+                CGPA = cgpa;
+        }
 }
 void STUDENT::setscore(int score)
 {
-        SCORE = score;
+        if(score < 0 || score > 100)
+        {
+                cout<<"Research score is invalid, setting value to zero";
+                SCORE = 0;
+        }
+        else
+        {
+                SCORE = score;
+        }
 }
 void STUDENT::setID(int id)
 {
@@ -314,21 +375,18 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
                 return "equal";
         }
 }
-void swap(int *xp, int *yp)  
-{  
-    int temp = *xp;  
-    *xp = *yp;  
-    *yp = temp;  
-}  
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 void bubblesort_CGPA(int arr[], int n)
 {
-    int i, j;  
-    for (i = 0; i < n-1; i++)      
-    // Last i elements are already in place  
-    for (j = 0; j < n-i-1; j++)  
-        if (arr[j] > arr[j+1])  
-            swap(&arr[j], &arr[j+1]); 
+    int i, j;
+    for (i = 0; i < n-1; i++)
+    // Last i elements are already in place
+    for (j = 0; j < n-i-1; j++)
+        if (arr[j] > arr[j+1])
+            swap(&arr[j], &arr[j+1]);
 }
-
-        
-        
