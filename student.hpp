@@ -99,9 +99,9 @@ public:
         int gettotal() const;
 
         friend void internationalOverallSort(InternationalStudent &arr, int n);
-        friend void deleteElement(InternationalStudent &arr, int n, int del);
+        friend void deleteElement(InternationalStudent&, int, int);
         friend string compareCountry(InternationalStudent&,InternationalStudent&);
-        friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
+        friend ostream& operator<<(ostream& outs, const InternationalStudent& p);
 
 private:
         string country;

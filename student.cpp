@@ -300,7 +300,7 @@ string InternationalStudent::getcountry() const
 {
         return(country);
 }
-ostream& operator <<(ostream& outs, const InternationalStudent& p)
+ostream& operator<<(ostream& outs, InternationalStudent& p)
 {
 	outs << "International student" << " " << p.getfname() << " "
 	 << p.getlname() << " from " << p.getcountry() << " country has cgpa of "
