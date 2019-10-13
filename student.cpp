@@ -503,7 +503,6 @@ void bubblesort_FirstName(STUDENT *arr, int n) // n is the number of elements in
 void bubblesort_LastName(STUDENT arr[], int n) // n is the number of elements in the array
 {
     int i, j;
-    STUDENT a, b;
     bool disorganized;
     cout << "test funct\n";
     for (i = 0; i < n-1; i++)
@@ -513,10 +512,8 @@ void bubblesort_LastName(STUDENT arr[], int n) // n is the number of elements in
       for (j = 0; j < n-i-1; j++)
       {
         cout << "test loop2\n" << arr[j].lname << endl;
-        a = arr[j];
-        b = arr[j+1];
         cout << "test again";
-        if (a.lname > b.lname)   //(arr[j] < arr[j+1]) //change this with the compare function
+        if (arr[j].lname > arr[j+1].lname)   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           cout << "test if funct";
           swap(&arr[j], &arr[j+1]);
