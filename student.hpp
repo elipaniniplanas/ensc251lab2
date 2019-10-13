@@ -75,7 +75,7 @@ public:
         string getprovince() const;
         friend void domesticOverallSort(DomesticStudent &arr, int n);
         friend string compareProvince(DomesticStudent&,DomesticStudent&);
-        friend ostream& operator <<(ostream& outs, const DomesticStudent& p);
+        friend ostream& operator<<(ostream& outs, const DomesticStudent& p);
 private:
         string province;
 };

@@ -300,15 +300,27 @@ string InternationalStudent::getcountry() const
 {
         return(country);
 }
-ostream& operator<<(ostream& outs, InternationalStudent& p)
+ostream& operator<<(ostream& outs, InternationalStudent& istu)
 {
-	outs << "International student" << " " << p.getfname() << " "
-	 << p.getlname() << " from " << p.getcountry() << " country has cgpa of "
-	 << p.getCGPA() << ", and research score of " << p.getscore()
-	 << ", the assigned ID is " << p.getID() << ", their toefl scores are: reading "
-	 << p.gettoeflread() << ", writing "<< p.gettoeflwrite() << ", listening "
-	 << p.gettoefllisten() << ", speaking " << p.gettoeflspeak() << ", and their total toefl score is "
-	 << p.gettotal() <<endl;
+	outs << "International student" << " " << istu.getfname() << " "
+	 << istu.getlname() << " from " << istu.getcountry() << " country has cgpa of "
+	 << istu.getCGPA() << ", and research score of " << istu.getscore()
+	 << ", the assigned ID is " << istu.getID() << ", their toefl scores are: reading "
+	 << istu.gettoeflread() << ", writing "<< istu.gettoeflwrite() << ", listening "
+	 << istu.gettoefllisten() << ", speaking " << istu.gettoeflspeak() << ", and their total toefl score is "
+	 << istu.gettotal() <<endl;
+   return(outs);
+}
+ostream& operator<<(ostream& outs, DomesticStudent& dstu)
+{
+	outs << "International student" << " " << dstu.getfname() << " "
+	 << dstu.getlname() << " from " << istu.getcountry() << " country has cgpa of "
+	 << dstu.getCGPA() << ", and research score of " << dstu.getscore()
+	 << ", the assigned ID is " << dstu.getID() << ", their toefl scores are: reading "
+	 << dstu.gettoeflread() << ", writing "<< dstu.gettoeflwrite() << ", listening "
+	 << dstu.gettoefllisten() << ", speaking " << dstu.gettoeflspeak() << ", and their total toefl score is "
+	 << dstu.gettotal() <<endl;
+   return(outs);
 }
 
 string compareCGPA(STUDENT& overallgpa1, STUDENT& overallgpa2)
