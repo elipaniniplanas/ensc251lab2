@@ -377,6 +377,7 @@ string compareFirstName(STUDENT overallfname1, STUDENT overallfname2)
 }
 string compareLastName(STUDENT overalllname1, STUDENT overalllname2)
 {
+        cout << "test comp";
         STUDENT result1,result2;
         result1.lname = overalllname1.lname;
         result2.lname = overalllname2.lname;
@@ -435,7 +436,7 @@ void swap(STUDENT *xp, STUDENT *yp)
     *xp = *yp;
     *yp = temp;
 }
-void bubblesort_CGPA(STUDENT *arr, int n) // n is the number of elements in the array
+void bubblesort_CGPA(STUDENT arr[], int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -512,7 +513,7 @@ void bubblesort_LastName(STUDENT arr[], int n) // n is the number of elements in
         cout << "test loop2\n";
         if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
-          cout << "test if funct";  
+          cout << "test if funct";
           swap(&arr[j], &arr[j+1]);
           disorganized = true;
         }
