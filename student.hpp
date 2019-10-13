@@ -11,7 +11,7 @@ public:
         ToeflScore();
         void setreading(int read);
         void setwriting(int write);
-        void setlistening(int listen);
+        void saqetlistening(int listen);
         void setspeaking(int speak);
         void settotalscore();
         int getreading() const;
