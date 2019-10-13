@@ -389,7 +389,7 @@ void swap(int *xp, int *yp)
     *xp = *yp;
     *yp = temp;
 }
-void bubblesort_CGPA(STUDNET& arr[], int n) // n is the number of elements in the array
+void bubblesort_CGPA(STUDENT& arr[], int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -410,7 +410,7 @@ void bubblesort_CGPA(STUDNET& arr[], int n) // n is the number of elements in th
       }
     }
 }
-void bubblesort_ResearchScore(STUDNET arr[], int n) // n is the number of elements in the array
+void bubblesort_ResearchScore(STUDENT arr[], int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -431,7 +431,7 @@ void bubblesort_ResearchScore(STUDNET arr[], int n) // n is the number of elemen
       }
     }
 }
-void bubblesort_FirstName(STUDNET& arr[], int n) // n is the number of elements in the array
+void bubblesort_FirstName(STUDENT& arr[], int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -452,7 +452,7 @@ void bubblesort_FirstName(STUDNET& arr[], int n) // n is the number of elements 
       }
     }
 }
-void bubblesort_LastName(STUDNET& arr[], int n) // n is the number of elements in the array
+void bubblesort_LastName(STUDENT& arr[], int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;

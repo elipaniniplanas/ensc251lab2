@@ -61,10 +61,10 @@ public:
   friend string compareFirstName(const STUDENT&,const STUDENT&);
   friend string compareLastName(const STUDENT&,const STUDENT&);
 
-  friend void bubblesort_CGPA(STUDNET&, int);
-  friend void bubblesort_ResearchScore(STUDNET&, int);
-  friend void bubblesort_FirstName(STUDNET&, int);
-  friend void bubblesort_LastName(STUDNET&, int);
+  friend void bubblesort_CGPA(STUDENT& arr[], int);
+  friend void bubblesort_ResearchScore(STUDENT& arr[], int);
+  friend void bubblesort_FirstName(STUDENT& arr[], int);
+  friend void bubblesort_LastName(STUDENT& arr[], int);
 
 private:
         string fname;//first name
@@ -85,6 +85,7 @@ public:
         void setprovince(string pv);
         //Accessor functions
         string getprovince() const;
+        friend void domesticOverallSort(DomesticStudent& arr[], int n);
         friend ostream& operator <<(ostream& outs, const DomesticStudent& p);
 private:
         string province;
@@ -99,16 +100,15 @@ public:
         InternationalStudent();
         //Mutator functions
         void setcountry(string co);
+        void settoefl(int read, int write, int listen, int speak);
         //Accessor functions
         string getcountry() const;
-        //gets toefl value from Toeflscore class
-        void settoefl(int read, int write, int listen, int speak);
-        //outputs toefl values and total
         int gettoeflread() const;
         int gettoeflwrite() const;
         int gettoefllisten() const;
         int gettoeflspeak() const;
         int gettotal() const;
+        friend void internationalOverallSort(InternationalStudent& arr[], int n);
         friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
 
 private:
