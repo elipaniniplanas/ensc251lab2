@@ -8,29 +8,17 @@ class ToeflScore
 {
 public:
         ToeflScore(int read, int write, int listen, int speak);
-        //Constructor function for ToeflScore
         ToeflScore();
-        //Other Constructor for ToeflScore (blank inputs, sets 0 for all members)
         void setreading(int read);
-        //This is the mutator function for the reading score
         void setwriting(int write);
-        //This is the mutator function for the writing score
         void setlistening(int listen);
-        //This is the mutator function for the listening score
         void setspeaking(int speak);
-        //This is the mutator function for the speaking score
         void settotalscore();
-        //This is the mutator function for the sum of all of the scores in an object
         int getreading() const;
-        //This is the accessor function for the reading score
         int getwriting() const;
-        //This is the accessor function for the writing score
         int getlistening() const;
-        //This is the accessor function for the listening score
         int getspeaking() const;
-        //This is the accessor function for the speaking score
         int gettotalscore() const;
-        //This is the accessor function for the sum of all of the scores in an object
 
 private:
         int reading;
@@ -72,7 +60,6 @@ private:
         float CGPA;//GPA
         int SCORE;//research score
         int ID;//id
-        //the id value will be set in the main.cpp
 };
 
 class DomesticStudent : public STUDENT

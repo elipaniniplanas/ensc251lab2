@@ -12,9 +12,6 @@
 	ToeflScore, in which has members that held data about international students' toefl scores and
 	their totals.
 */
-
-//main.cpp, put your driver code here,
-//you can manipulate your class objects here
 #include <iostream> //cin and cout
 #include <fstream> //file processing
 #include <sstream> //formatted string processing
@@ -36,20 +33,12 @@ int main(){
     return -1;
   }
   getline(domesticFile, line);//this skips the first line which is about the file format
-  //cout << "File format: " << line << endl; -- This line was from the origninal download file
-  //This int is to keep track which domestic student is being displayed and how many domestic student are there
   int Dstu_count = 1;
-  // This int will increment each loop to generate a unique id for each student
   int ID_count = 20200000;
   int counter1 = 0;
   int counter2 = 0;
 
   while( getline(domesticFile, line) ) {
-    /*process each line, get each field separated by a comma.
-     *We use istringstream to handle it.
-     *Note in this code here, we assume the file format
-     *is perfect and do NOT handle error cases.*/
-
     //make the string from the line in the file into a istringstream to be able to parse the data
     istringstream ss(line);
     //Declare variables to hold the data parsed from the file/lines
@@ -81,13 +70,11 @@ int main(){
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
 	 << Dstudent.getCGPA() << ", and research score of " << Dstudent.getscore() << ", the assigned ID is "
 	 << Dstudent.getID() << endl;*/
-
     //Generate a new ID and prepare to the next iteration of the loop
     counter1++;
     Dstu_count++;
     ID_count++;
   }
-  //close your file
   domesticFile.close();
 
   //Here begins the proccess of getting and setting the data for international students
@@ -100,9 +87,6 @@ int main(){
   getline(internationalFile, line);//this skips the first line which is about the file format
   //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
-
-
-
   while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -130,7 +114,6 @@ int main(){
     speak = atoi(s_speak.c_str());
     getline(ss, s_write, ',');
     write = atoi(s_write.c_str());
-
     // Set all data to the Istudent object with mutator functions
     Istudent[counter2].setfname(firstName);
     Istudent[counter2].setlname(lastName);
