@@ -25,6 +25,8 @@ int main(){
   string userInComp;
   DomesticStudent Dstudent[100];
   InternationalStudent Istudent[100];
+  int sizeD;
+  int sizeI;
   //DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
   //InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
 
@@ -143,7 +145,8 @@ int main(){
   }
   //close your file
   internationalFile.close();
-
+  sizeD = sizeof(Dstudent)/sizeof(Dstudent[0]);
+  sizeI = sizeof(Istudent)/sizeof(Istudent[0]);
   retry:
   cout << "Sort:\nDomestic students; type 'D' or 'd'\nInternational students; type 'I' or 'i'\nINPUT: ";
   cin >> userInStu;
@@ -156,32 +159,32 @@ int main(){
     cout << endl;
     if ((userInComp == "c")||(userInComp == "C"))
     {
-      bubblesort_CGPA(Dstudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_CGPA(Dstudent, sizeD);
+      for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
       }
     }
     else if ((userInComp == "r")||(userInComp == "R"))
     {
-      bubblesort_ResearchScore(Dstudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_ResearchScore(Dstudent, sizeD);
+      for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
       }
     }
     else if ((userInComp == "f")||(userInComp == "F"))
     {
-      bubblesort_FirstName(Dstudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_FirstName(Dstudent, sizeD);
+      for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
       }
     }
     else if ((userInComp == "l")||(userInComp == "L"))
     {
-      bubblesort_LastName(Dstudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_LastName(Dstudent, sizeD);
+      for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
       }
@@ -200,24 +203,24 @@ int main(){
     cout << endl;
     if ((userInComp == "c")||(userInComp == "C"))
     {
-      bubblesort_CGPA(Istudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_CGPA(Istudent, sizeI);
+      for(int k=0; k < sizeI; k++)
       {
         cout << (Istudent+k);
       }
     }
     else if ((userInComp == "r")||(userInComp == "R"))
     {
-      bubblesort_ResearchScore(Istudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_ResearchScore(Istudent, sizeI);
+      for(int k=0; k < sizeI; k++)
       {
         cout << (Istudent+k);
       }
     }
     else if ((userInComp == "f")||(userInComp == "F"))
     {
-      bubblesort_FirstName(Istudent, 100);
-      for(int k=0; k < 100; k++)
+      bubblesort_FirstName(Istudent, sizeI);
+      for(int k=0; k < sizeI; k++)
       {
         cout << (Istudent+k);
       }
@@ -225,9 +228,9 @@ int main(){
     else if ((userInComp == "l")||(userInComp == "L"))
     {
       cout << "test if\n";
-      bubblesort_LastName(Istudent, 100);
+      bubblesort_LastName(Istudent, sizeI);
       cout << "test sort\n";
-      for(int k=0; k < 100; k++)
+      for(int k=0; k < sizeI; k++)
       {
         cout << "test loop\n";
         cout << (Istudent+k);
