@@ -300,7 +300,7 @@ string InternationalStudent::getcountry() const
 {
         return(country);
 }
-ostream& operator<<(ostream& outs, InternationalStudent& istu)
+ostream& operator<<(ostream& outs, const InternationalStudent& istu)
 {
 	outs << "International student" << " " << istu.getfname() << " "
 	 << istu.getlname() << " from " << istu.getcountry() << " country has cgpa of "
@@ -311,7 +311,7 @@ ostream& operator<<(ostream& outs, InternationalStudent& istu)
 	 << istu.gettotal() <<endl;
    return(outs);
 }
-ostream& operator<<(ostream& outs, DomesticStudent& dstu)
+ostream& operator<<(ostream& outs, const DomesticStudent& dstu)
 {
 	outs << "Domestic student" << " " << dstu.getfname() << " "
 	 << dstu.getlname() << " from " << dstu.getprovince() << " province has cgpa of "

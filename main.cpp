@@ -159,7 +159,7 @@ int main(){
       bubblesort_CGPA(Dstudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Dstudent[k];
+        cout << (Dstudent+k);
       }
     }
     else if ((userInComp == "r")||(userInComp == "R"))
@@ -167,7 +167,7 @@ int main(){
       bubblesort_ResearchScore(Dstudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Dstudent[k];
+        cout << (Dstudent+k);
       }
     }
     else if ((userInComp == "f")||(userInComp == "F"))
@@ -175,7 +175,7 @@ int main(){
       bubblesort_FirstName(Dstudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Dstudent[k];
+        cout << (Dstudent+k);
       }
     }
     else if ((userInComp == "l")||(userInComp == "L"))
@@ -183,7 +183,7 @@ int main(){
       bubblesort_LastName(Dstudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Dstudent[k];
+        cout << (Dstudent+k);
       }
     }
     else
@@ -203,7 +203,7 @@ int main(){
       bubblesort_CGPA(Istudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Istudent[k];
+        cout << (Istudent+k);
       }
     }
     else if ((userInComp == "r")||(userInComp == "R"))
@@ -211,7 +211,7 @@ int main(){
       bubblesort_ResearchScore(Istudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Istudent[k];
+        cout << (Istudent+k);
       }
     }
     else if ((userInComp == "f")||(userInComp == "F"))
@@ -219,7 +219,7 @@ int main(){
       bubblesort_FirstName(Istudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Istudent[k];
+        cout << (Istudent+k);
       }
     }
     else if ((userInComp == "l")||(userInComp == "L"))
@@ -227,7 +227,7 @@ int main(){
       bubblesort_LastName(Istudent, 100);
       for(int k=0; k < 100; k++)
       {
-        cout << Istudent[k];
+        cout << (Istudent+k);
       }
     }
     else
