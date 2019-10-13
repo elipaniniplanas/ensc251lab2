@@ -156,7 +156,7 @@ int main(){
     cout << endl;
     if ((userInStu == "c")||(userInStu == "C"))
     {
-      bubblesort_CGPA(Dstudent, 100)
+      bubblesort_CGPA(Dstudent, 100);
     }
     else if ((userInStu == "r")||(userInStu == "R"))
     {}
