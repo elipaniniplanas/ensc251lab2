@@ -225,8 +225,10 @@ int main(){
     else if ((userInComp == "l")||(userInComp == "L"))
     {
       bubblesort_LastName(Istudent, 100);
+      cout << "test if";
       for(int k=0; k < 100; k++)
       {
+        cout << "test loop";
         cout << (Istudent+k);
       }
     }
