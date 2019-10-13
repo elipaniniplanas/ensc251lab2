@@ -372,7 +372,7 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
         result2.lname = overalllname2.lname;
         if (result1.lname < result2.lname)
         {
-                return "less";
+                return "less";//the first one's name is first in the alphabet
         }
         else if (result1.lname > result2.lname)
         {
