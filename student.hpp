@@ -95,6 +95,7 @@ public:
         int gettoefllisten() const;
         int gettoeflspeak() const;
         int gettotal() const;
+
         friend void internationalOverallSort(InternationalStudent& arr[], int n);
         friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
 

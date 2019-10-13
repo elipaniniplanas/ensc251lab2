@@ -473,3 +473,24 @@ void bubblesort_LastName(STUDENT& arr[], int n) // n is the number of elements i
       }
     }
 }
+void domesticOverallSort(DomesticStudent& arr[], int n)
+{
+  int i, j;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = FALSE;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
+      {
+        swap(&arr[j], &arr[j+1]);
+        disorganized = TRUE;
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
