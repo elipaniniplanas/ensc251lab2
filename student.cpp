@@ -75,7 +75,7 @@ void ToeflScore::setwriting(int write)
   }
   else
   {
-          writeing = write;
+          writing = write;
   }
 }
 void ToeflScore::setlistening(int listen)
@@ -419,9 +419,9 @@ string compareCountry(const InternationalStudent& overallCo1, const Internationa
                 return "equal";
         }
 }
-void swap(int *xp, int *yp)
+void swap(STUDENT *xp, STUDENT *yp)
 {
-    int temp = *xp;
+    STUDENT temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
@@ -431,13 +431,13 @@ void bubblesort_CGPA(STUDENT *arr, int n) // n is the number of elements in the 
     bool disorganized;
     for (i = 0; i < n-1; i++)
     {
-      disorganized = FALSE;
+      disorganized = false;
       for (j = 0; j < n-i-1; j++)
       {
         if (compareCGPA(arr[j], arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
-          disorganized = TRUE;
+          disorganized = true;
         }
       }
       if (!disorganized)
@@ -452,13 +452,13 @@ void bubblesort_ResearchScore(STUDENT *arr, int n) // n is the number of element
     bool disorganized;
     for (i = 0; i < n-1; i++)
     {
-      disorganized = FALSE;
+      disorganized = false;
       for (j = 0; j < n-i-1; j++)
       {
         if (compareResearchScore(arr[j], arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
-          disorganized = TRUE;
+          disorganized = true;
         }
       }
       if (!disorganized)
@@ -473,13 +473,13 @@ void bubblesort_FirstName(STUDENT *arr, int n) // n is the number of elements in
     bool disorganized;
     for (i = 0; i < n-1; i++)
     {
-      disorganized = FALSE;
+      disorganized = false;
       for (j = 0; j < n-i-1; j++)
       {
         if (compareFirstName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
-          disorganized = TRUE;
+          disorganized = true;
         }
       }
       if (!disorganized)
@@ -494,13 +494,13 @@ void bubblesort_LastName(STUDENT *arr, int n) // n is the number of elements in 
     bool disorganized;
     for (i = 0; i < n-1; i++)
     {
-      disorganized = FALSE;
+      disorganized = false;
       for (j = 0; j < n-i-1; j++)
       {
         if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
-          disorganized = TRUE;
+          disorganized = true;
         }
       }
       if (!disorganized)
@@ -516,27 +516,27 @@ void domesticOverallSort(DomesticStudent *arr, int n)
   bool disorganized;
   for (i = 0; i < n-1; i++)
   {
-    disorganized = FALSE;
+    disorganized = false;
     for (j = 0; j < n-i-1; j++)
     {
       if (compareResearchScore(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
       {
         swap(&arr[j], &arr[j+1]);
-        disorganized = TRUE;
+        disorganized = true;
       }
       else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
       {
         if (compareCGPA(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
-          disorganized = TRUE;
+          disorganized = true;
         }
         else if (compareCGPA(arr[j], arr[j+1]) == "equal")
         {
           if (compareProvince(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
           {
             swap(&arr[j], &arr[j+1]);
-            disorganized = TRUE;
+            disorganized = true;
           }
         }
       }
@@ -563,27 +563,27 @@ void internationalOverallSort(InternationalStudent *arr, int n)
   bool disorganized;
   for (i = 0; i < n-1; i++)
   {
-    disorganized = FALSE;
+    disorganized = false;
     for (j = 0; j < n-i-1; j++)
     {
       if (compareResearchScore(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
       {
         swap(&arr[j], &arr[j+1]);
-        disorganized = TRUE;
+        disorganized = true;
       }
       else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
       {
         if (compareCGPA(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
-          disorganized = TRUE;
+          disorganized = true;
         }
         else if (compareCGPA(arr[j], arr[j+1]) == "equal")
         {
           if (compareCountry(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
           {
             swap(&arr[j], &arr[j+1]);
-            disorganized = TRUE;
+            disorganized = true;
           }
         }
       }

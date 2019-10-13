@@ -11,7 +11,7 @@ public:
         ToeflScore();
         void setreading(int read);
         void setwriting(int write);
-        void saqetlistening(int listen);
+        void setlistening(int listen);
         void setspeaking(int speak);
         void settotalscore();
         int getreading() const;
@@ -49,6 +49,7 @@ public:
   friend string compareFirstName(const STUDENT&,const STUDENT&);
   friend string compareLastName(const STUDENT&,const STUDENT&);
 
+  friend void swap(STUDENT *xp, STUDENT *yp);
   friend void bubblesort_CGPA(STUDENT *arr, int);
   friend void bubblesort_ResearchScore(STUDENT *arr, int);
   friend void bubblesort_FirstName(STUDENT *arr, int);
