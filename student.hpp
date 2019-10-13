@@ -99,7 +99,7 @@ public:
 
         friend void internationalOverallSort(InternationalStudent &arr, int n);
         friend void deleteElement(InternationalStudent &arr, int n, int del);
-        friend string compareCountry(const InternationalStudent&,const InternationalStudent&)
+        friend string compareCountry(const InternationalStudent&,const InternationalStudent&);
         friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
 
 private:

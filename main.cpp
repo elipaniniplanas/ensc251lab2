@@ -22,7 +22,7 @@ int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
   string userInStu;
-  sring userInComp;
+  string userInComp;
   DomesticStudent Dstudent[100];
   InternationalStudent Istudent[100];
   //DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
@@ -171,7 +171,7 @@ int main(){
   {}
   else
   {
-    cout << "INPUT ERROR\n":
+    cout << "INPUT ERROR\n";
     goto tryagain;
   }
 
