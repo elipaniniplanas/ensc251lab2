@@ -321,7 +321,7 @@ ostream& operator<<(ostream& outs, const DomesticStudent& dstu)
    return(outs);
 }
 
-string compareCGPA(STUDENT& overallgpa1, STUDENT& overallgpa2)
+string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
 {
         STUDENT result1,result2;
         result1.CGPA = overallgpa1.CGPA;
@@ -339,7 +339,7 @@ string compareCGPA(STUDENT& overallgpa1, STUDENT& overallgpa2)
                 return "equal";
         }
 }
-string compareResearchScore(STUDENT& overallscore1, STUDENT& overallscore2)
+string compareResearchScore(STUDENT overallscore1, STUDENT overallscore2)
 {
         STUDENT result1,result2;
         result1.SCORE = overallscore1.SCORE;
@@ -357,7 +357,7 @@ string compareResearchScore(STUDENT& overallscore1, STUDENT& overallscore2)
                 return "equal";
         }
 }
-string compareFirstName(STUDENT& overallfname1, STUDENT& overallfname2)
+string compareFirstName(STUDENT overallfname1, STUDENT overallfname2)
 {
         STUDENT result1,result2;
         result1.fname = overallfname1.fname;
@@ -375,7 +375,7 @@ string compareFirstName(STUDENT& overallfname1, STUDENT& overallfname2)
                 return "equal";
         }
 }
-string compareLastName(STUDENT& overalllname1, STUDENT& overalllname2)
+string compareLastName(STUDENT overalllname1, STUDENT overalllname2)
 {
         STUDENT result1,result2;
         result1.lname = overalllname1.lname;
@@ -393,7 +393,7 @@ string compareLastName(STUDENT& overalllname1, STUDENT& overalllname2)
                 return "equal";
         }
 }
-string compareProvince(DomesticStudent& overallProv1, DomesticStudent& overallProv2)
+string compareProvince(DomesticStudent overallProv1, DomesticStudent overallProv2)
 {
         DomesticStudent result1,result2;
         result1.province = overallProv1.province;
@@ -411,7 +411,7 @@ string compareProvince(DomesticStudent& overallProv1, DomesticStudent& overallPr
                 return "equal";
         }
 }
-string compareCountry(InternationalStudent& overallCo1, InternationalStudent& overallCo2)
+string compareCountry(InternationalStudent overallCo1, InternationalStudent overallCo2)
 {
         InternationalStudent result1,result2;
         result1.country = overallCo1.country;
