@@ -23,8 +23,10 @@ int main(){
   string line; //Used to retrieve a line in the files
   string userInStu;
   sring userInComp;
-  DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
-  InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
+  DomesticStudent Dstudent[100];
+  InternationalStudent Istudent[100];
+  //DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
+  //InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
 
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");

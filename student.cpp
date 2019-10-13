@@ -311,7 +311,7 @@ ostream& operator <<(ostream& outs, const InternationalStudent& p)
 	 << p.gettotal() <<endl;
 }
 
-string compareCGPA(const STUDENT& overallgpa1, const STUDENT& overallgpa2)
+string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
 {
         STUDENT result1,result2;
         result1.CGPA = overallgpa1.CGPA;
@@ -383,13 +383,49 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
                 return "equal";
         }
 }
+string compareProvince(const DomesticStudent& overallProv1, const DomesticStudent& overallProv2)
+{
+        DomesticStudent result1,result2;
+        result1.province = overallProv1.province;
+        result2.province = overallProv2.province;
+        if (result1.province < result2.province)
+        {
+                return "less";
+        }
+        else if (result1.province > result2.province)
+        {
+                return "greater";
+        }
+        else
+        {
+                return "equal";
+        }
+}
+string compareCountry(const InternationalStudent& overallCo1, const InternationalStudent& overallCo2)
+{
+        DomesticStudent result1,result2;
+        result1.country = overallCo1.country;
+        result2.country = overallCo2.country;
+        if (result1.country < result2.country)
+        {
+                return "less";
+        }
+        else if (result1.country > result2.country)
+        {
+                return "greater";
+        }
+        else
+        {
+                return "equal";
+        }
+}
 void swap(int *xp, int *yp)
 {
     int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
-void bubblesort_CGPA(STUDENT& arr[], int n) // n is the number of elements in the array
+void bubblesort_CGPA(STUDENT *arr, int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -410,7 +446,7 @@ void bubblesort_CGPA(STUDENT& arr[], int n) // n is the number of elements in th
       }
     }
 }
-void bubblesort_ResearchScore(STUDENT arr[], int n) // n is the number of elements in the array
+void bubblesort_ResearchScore(STUDENT *arr, int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -419,7 +455,7 @@ void bubblesort_ResearchScore(STUDENT arr[], int n) // n is the number of elemen
       disorganized = FALSE;
       for (j = 0; j < n-i-1; j++)
       {
-        if (compareResearchScore(*arr[j], *arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+        if (compareResearchScore(arr[j], arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           swap(&arr[j], &arr[j+1]);
           disorganized = TRUE;
@@ -431,7 +467,7 @@ void bubblesort_ResearchScore(STUDENT arr[], int n) // n is the number of elemen
       }
     }
 }
-void bubblesort_FirstName(STUDENT& arr[], int n) // n is the number of elements in the array
+void bubblesort_FirstName(STUDENT *arr, int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -452,7 +488,7 @@ void bubblesort_FirstName(STUDENT& arr[], int n) // n is the number of elements 
       }
     }
 }
-void bubblesort_LastName(STUDENT& arr[], int n) // n is the number of elements in the array
+void bubblesort_LastName(STUDENT *arr, int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -473,7 +509,55 @@ void bubblesort_LastName(STUDENT& arr[], int n) // n is the number of elements i
       }
     }
 }
-void domesticOverallSort(DomesticStudent& arr[], int n)
+
+void domesticOverallSort(DomesticStudent *arr, int n)
+{
+  int i, j, k;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = FALSE;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
+      {
+        swap(&arr[j], &arr[j+1]);
+        disorganized = TRUE;
+      }
+      else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
+      {
+        if (compareCGPA(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
+        {
+          swap(&arr[j], &arr[j+1]);
+          disorganized = TRUE;
+        }
+        else if (compareCGPA(arr[j], arr[j+1]) == "equal")
+        {
+          if (compareProvince(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+          {
+            swap(&arr[j], &arr[j+1]);
+            disorganized = TRUE;
+          }
+        }
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
+void deleteElement(InternationalStudent *arr, int n, int del)
+{
+  int i, j;
+  for(int j=del; j<(n-2); j++)
+			{
+				arr[j]=arr[j+1];
+			}
+			count++;
+			break;
+}
+void internationalOverallSort(InternationalStudent *arr, int n)
 {
   int i, j;
   bool disorganized;
@@ -487,10 +571,55 @@ void domesticOverallSort(DomesticStudent& arr[], int n)
         swap(&arr[j], &arr[j+1]);
         disorganized = TRUE;
       }
+      else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
+      {
+        if (compareCGPA(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
+        {
+          swap(&arr[j], &arr[j+1]);
+          disorganized = TRUE;
+        }
+        else if (compareCGPA(arr[j], arr[j+1]) == "equal")
+        {
+          if (compareCountry(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+          {
+            swap(&arr[j], &arr[j+1]);
+            disorganized = TRUE;
+          }
+        }
+      }
     }
     if (!disorganized)
     {
       break;
+    }
+  }
+  for (k = 0; k < n-1; k++)
+  {
+    redo:
+    if((arr+k)->gettoeflread() < 20)
+    {
+      deleteElement(arr, n, k);
+      goto redo;
+    }
+    if((arr+k)->gettoeflwrite() < 20)
+    {
+      deleteElement(arr, n, k);
+      goto redo;
+    }
+    if((arr+k)->gettoefllisten() < 20)
+    {
+      deleteElement(arr, n, k);
+      goto redo;
+    }
+    if((arr+k)->gettoeflspeak() < 20)
+    {
+      deleteElement(arr, n, k);
+      goto redo;
+    }
+    if((arr+k)->gettotal() < 93)
+    {
+      deleteElement(arr, n, k);
+      goto redo;
     }
   }
 }
