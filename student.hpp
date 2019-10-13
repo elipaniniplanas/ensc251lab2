@@ -45,9 +45,9 @@ public:
   int getID() const;
 
   friend string compareCGPA(STUDENT, STUDENT);
-  friend string compareResearchScore(STUDENT, STUDENT);
+  friend string compareResearchScore(STUDENT overallscore1, STUDENT overallscore2);
   friend string compareFirstName(STUDENT, STUDENT);
-  friend string compareLastName(STUDENT, STUDENT);
+  friend string compareLastName(STUDENT overalllname1, STUDENT overalllname2);
 
   friend void swap(STUDENT*, STUDENT*);
   friend void bubblesort_CGPA(STUDENT*, int);
