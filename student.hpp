@@ -44,16 +44,16 @@ public:
   int getscore() const;
   int getID() const;
 
-  friend string compareCGPA(const STUDENT&,const STUDENT&);
-  friend string compareResearchScore(const STUDENT&,const STUDENT&);
-  friend string compareFirstName(const STUDENT&,const STUDENT&);
-  friend string compareLastName(const STUDENT&,const STUDENT&);
+  friend string compareCGPA(STUDENT&,STUDENT&);
+  friend string compareResearchScore(STUDENT&,STUDENT&);
+  friend string compareFirstName(STUDENT&,STUDENT&);
+  friend string compareLastName(STUDENT&,STUDENT&);
 
-  friend void swap(STUDENT *xp, STUDENT *yp);
-  friend void bubblesort_CGPA(STUDENT *arr, int);
-  friend void bubblesort_ResearchScore(STUDENT *arr, int);
-  friend void bubblesort_FirstName(STUDENT *arr, int);
-  friend void bubblesort_LastName(STUDENT *arr, int);
+  friend void swap(STUDENT*, STUDENT*);
+  friend void bubblesort_CGPA(STUDENT*, int);
+  friend void bubblesort_ResearchScore(STUDENT*, int);
+  friend void bubblesort_FirstName(STUDENT*, int);
+  friend void bubblesort_LastName(STUDENT*, int);
 
 private:
         string fname;//first name
@@ -74,7 +74,7 @@ public:
         //Accessor functions
         string getprovince() const;
         friend void domesticOverallSort(DomesticStudent &arr, int n);
-        friend string compareProvince(const DomesticStudent&,const DomesticStudent&);
+        friend string compareProvince(DomesticStudent&,DomesticStudent&);
         friend ostream& operator <<(ostream& outs, const DomesticStudent& p);
 private:
         string province;
@@ -100,7 +100,7 @@ public:
 
         friend void internationalOverallSort(InternationalStudent &arr, int n);
         friend void deleteElement(InternationalStudent &arr, int n, int del);
-        friend string compareCountry(const InternationalStudent&,const InternationalStudent&);
+        friend string compareCountry(InternationalStudent&,InternationalStudent&);
         friend ostream& operator <<(ostream& outs, const InternationalStudent& p);
 
 private:

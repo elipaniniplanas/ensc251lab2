@@ -311,7 +311,7 @@ ostream& operator <<(ostream& outs, const InternationalStudent& p)
 	 << p.gettotal() <<endl;
 }
 
-string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
+string compareCGPA(STUDENT& overallgpa1, STUDENT& overallgpa2)
 {
         STUDENT result1,result2;
         result1.CGPA = overallgpa1.CGPA;
@@ -329,7 +329,7 @@ string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
                 return "equal";
         }
 }
-string compareResearchScore(const STUDENT& overallscore1, const STUDENT& overallscore2)
+string compareResearchScore(STUDENT& overallscore1, STUDENT& overallscore2)
 {
         STUDENT result1,result2;
         result1.SCORE = overallscore1.SCORE;
@@ -347,7 +347,7 @@ string compareResearchScore(const STUDENT& overallscore1, const STUDENT& overall
                 return "equal";
         }
 }
-string compareFirstName(const STUDENT& overallfname1, const STUDENT& overallfname2)
+string compareFirstName(STUDENT& overallfname1, STUDENT& overallfname2)
 {
         STUDENT result1,result2;
         result1.fname = overallfname1.fname;
@@ -365,7 +365,7 @@ string compareFirstName(const STUDENT& overallfname1, const STUDENT& overallfnam
                 return "equal";
         }
 }
-string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname2)
+string compareLastName(STUDENT& overalllname1, STUDENT& overalllname2)
 {
         STUDENT result1,result2;
         result1.lname = overalllname1.lname;
@@ -383,7 +383,7 @@ string compareLastName(const STUDENT& overalllname1, const STUDENT& overalllname
                 return "equal";
         }
 }
-string compareProvince(const DomesticStudent& overallProv1, const DomesticStudent& overallProv2)
+string compareProvince(DomesticStudent& overallProv1, DomesticStudent& overallProv2)
 {
         DomesticStudent result1,result2;
         result1.province = overallProv1.province;
@@ -401,7 +401,7 @@ string compareProvince(const DomesticStudent& overallProv1, const DomesticStuden
                 return "equal";
         }
 }
-string compareCountry(const InternationalStudent& overallCo1, const InternationalStudent& overallCo2)
+string compareCountry(InternationalStudent& overallCo1, InternationalStudent& overallCo2)
 {
         DomesticStudent result1,result2;
         result1.country = overallCo1.country;
@@ -554,12 +554,10 @@ void deleteElement(InternationalStudent *arr, int n, int del)
 			{
 				arr[j]=arr[j+1];
 			}
-			count++;
-			break;
 }
 void internationalOverallSort(InternationalStudent *arr, int n)
 {
-  int i, j;
+  int i, j, k;
   bool disorganized;
   for (i = 0; i < n-1; i++)
   {
