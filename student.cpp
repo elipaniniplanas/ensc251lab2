@@ -306,7 +306,7 @@ ostream& operator<<(ostream& outs, const InternationalStudent& istu)
 	outs << "International student" << " " << istu.getfname() << " "
 	 << istu.getlname() << " from " << istu.getcountry() << " country has cgpa of "
 	 << istu.getCGPA() << ", and research score of " << istu.getscore()
-	 << ", the assigned ID is " << istu.getID() << ", their toefl scores are: reading "
+	 << ", the assigned ID is " << istu.getID() <<".\n" <<"Their toefl scores are: reading "
 	 << istu.gettoeflread() << ", writing "<< istu.gettoeflwrite() << ", listening "
 	 << istu.gettoefllisten() << ", speaking " << istu.gettoeflspeak() << ", and their total toefl score is "
 	 << istu.gettotal() <<endl;
@@ -503,13 +503,10 @@ void bubblesort_LastName(STUDENT *arr, int n) // n is the number of elements in 
     int i, j;
     bool disorganized;
     cout << "test funct";
-    for(int k=0; k < n; k++)
-    {
-      cout << arr[k];
-    }
     for (i = 0; i < n-1; i++)
     {
       disorganized = false;
+      cout << "test loop1";
       for (j = 0; j < n-i-1; j++)
       {
         if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
