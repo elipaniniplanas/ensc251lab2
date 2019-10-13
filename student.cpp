@@ -403,7 +403,7 @@ string compareProvince(DomesticStudent& overallProv1, DomesticStudent& overallPr
 }
 string compareCountry(InternationalStudent& overallCo1, InternationalStudent& overallCo2)
 {
-        DomesticStudent result1,result2;
+        InternationalStudent result1,result2;
         result1.country = overallCo1.country;
         result2.country = overallCo2.country;
         if (result1.country < result2.country)
