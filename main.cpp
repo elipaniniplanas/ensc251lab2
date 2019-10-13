@@ -66,7 +66,7 @@ int main(){
     Dstudent[counter1].setID(ID_count);
     Dstudent[counter1].setprovince(province);
 
-    cout << counter1+1 << " " << Dstudent[counter1];
+    //cout << counter1+1 << " " << Dstudent[counter1];
     //print the student info to the screen
     /*cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
@@ -126,7 +126,7 @@ int main(){
     Istudent[counter2].settoefl(read,write,listen,speak);
     Istudent[counter2].setID(ID_count);
 
-    cout << counter2+1 << " " << Istudent[counter2];
+    //cout << counter2+1 << " " << Istudent[counter2];
     //print the student info to the screen
     /*cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
 	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
@@ -154,15 +154,15 @@ int main(){
     cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
     cin >> userInComp;
     cout << endl;
-    if ((userInStu == "c")||(userInStu == "C"))
+    if ((userInComp == "c")||(userInComp == "C"))
     {
       bubblesort_CGPA(Dstudent, 100);
     }
-    else if ((userInStu == "r")||(userInStu == "R"))
+    else if ((userInComp == "r")||(userInComp == "R"))
     {}
-    else if ((userInStu == "f")||(userInStu == "F"))
+    else if ((userInComp == "f")||(userInComp == "F"))
     {}
-    else if ((userInStu == "l")||(userInStu == "L"))
+    else if ((userInComp == "l")||(userInComp == "L"))
     {}
     else
     {
@@ -176,19 +176,19 @@ int main(){
     cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
     cin >> userInComp;
     cout << endl;
-    if ((userInStu == "c")||(userInStu == "C"))
+    if ((userInComp == "c")||(userInComp == "C"))
     {
       bubblesort_CGPA(Dstudent, 100);
     }
-    else if ((userInStu == "r")||(userInStu == "R"))
+    else if ((userInComp == "r")||(userInComp == "R"))
     {
       bubblesort_ResearchScore(Dstudent, 100);
     }
-    else if ((userInStu == "f")||(userInStu == "F"))
+    else if ((userInComp == "f")||(userInComp == "F"))
     {
       bubblesort_FirstName(Dstudent, 100);
     }
-    else if ((userInStu == "l")||(userInStu == "L"))
+    else if ((userInComp == "l")||(userInComp == "L"))
     {
       bubblesort_LastName(Dstudent, 100);
     }
