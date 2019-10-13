@@ -150,7 +150,7 @@ int main(){
   cout << endl;
   if ((userInStu == "d")||(userInStu == "D"))
   {
-    tryagain:
+    tryagain1:
     cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
     cin >> userInComp;
     cout << endl;
@@ -167,12 +167,12 @@ int main(){
     else
     {
       cout << "INPUT ERROR\n";
-      goto tryagain;
+      goto tryagain1;
     }
   }
   else if ((userInStu == "i")||(userInStu == "I"))
   {
-    tryagain:
+    tryagain2:
     cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
     cin >> userInComp;
     cout << endl;
@@ -195,7 +195,7 @@ int main(){
     else
     {
       cout << "INPUT ERROR\n";
-      goto tryagain;
+      goto tryagain2;
     }
   }
   else
