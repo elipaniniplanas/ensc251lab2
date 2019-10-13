@@ -505,7 +505,7 @@ void bubblesort_LastName(STUDENT *arr, int n) // n is the number of elements in 
     cout << "test funct";
     for(int k=0; k < n; k++)
     {
-      cout << (arr+k);
+      cout << arr[k];
     }
     for (i = 0; i < n-1; i++)
     {
