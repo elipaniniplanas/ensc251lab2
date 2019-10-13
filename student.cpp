@@ -313,13 +313,10 @@ ostream& operator<<(ostream& outs, InternationalStudent& istu)
 }
 ostream& operator<<(ostream& outs, DomesticStudent& dstu)
 {
-	outs << "International student" << " " << dstu.getfname() << " "
-	 << dstu.getlname() << " from " << istu.getcountry() << " country has cgpa of "
+	outs << "Domestic student" << " " << dstu.getfname() << " "
+	 << dstu.getlname() << " from " << istu.getcountry() << " province has cgpa of "
 	 << dstu.getCGPA() << ", and research score of " << dstu.getscore()
-	 << ", the assigned ID is " << dstu.getID() << ", their toefl scores are: reading "
-	 << dstu.gettoeflread() << ", writing "<< dstu.gettoeflwrite() << ", listening "
-	 << dstu.gettoefllisten() << ", speaking " << dstu.gettoeflspeak() << ", and their total toefl score is "
-	 << dstu.gettotal() <<endl;
+	 << ", the assigned ID is " << dstu.getID() << endl;
    return(outs);
 }
 
