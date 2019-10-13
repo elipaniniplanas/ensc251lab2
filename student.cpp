@@ -505,7 +505,6 @@ void bubblesort_LastName(STUDENT arr[], int n) // n is the number of elements in
     int i, j;
     STUDENT a, b;
     bool disorganized;
-    string equivalent;
     cout << "test funct\n";
     for (i = 0; i < n-1; i++)
     {
@@ -516,9 +515,7 @@ void bubblesort_LastName(STUDENT arr[], int n) // n is the number of elements in
         cout << "test loop2\n" << arr[j].lname << endl;
         a = arr[j];
         b = arr[j+1];
-        equivalent = compareLastName(a, b);
-
-        if (equivalent == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+        if (a.lname > b.lname)   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           cout << "test if funct";
           swap(&arr[j], &arr[j+1]);
