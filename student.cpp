@@ -314,7 +314,7 @@ ostream& operator<<(ostream& outs, InternationalStudent& istu)
 ostream& operator<<(ostream& outs, DomesticStudent& dstu)
 {
 	outs << "Domestic student" << " " << dstu.getfname() << " "
-	 << dstu.getlname() << " from " << istu.getcountry() << " province has cgpa of "
+	 << dstu.getlname() << " from " << dstu.getprovince() << " province has cgpa of "
 	 << dstu.getCGPA() << ", and research score of " << dstu.getscore()
 	 << ", the assigned ID is " << dstu.getID() << endl;
    return(outs);
