@@ -149,31 +149,59 @@ int main(){
   cin >> userInStu;
   cout << endl;
   if ((userInStu == "d")||(userInStu == "D"))
-  {}
+  {
+    tryagain:
+    cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
+    cin >> userInComp;
+    cout << endl;
+    if ((userInStu == "c")||(userInStu == "C"))
+    {
+      bubblesort_CGPA(Dstudent, 100)
+    }
+    else if ((userInStu == "r")||(userInStu == "R"))
+    {}
+    else if ((userInStu == "f")||(userInStu == "F"))
+    {}
+    else if ((userInStu == "l")||(userInStu == "L"))
+    {}
+    else
+    {
+      cout << "INPUT ERROR\n";
+      goto tryagain;
+    }
+  }
   else if ((userInStu == "i")||(userInStu == "I"))
-  {}
+  {
+    tryagain:
+    cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
+    cin >> userInComp;
+    cout << endl;
+    if ((userInStu == "c")||(userInStu == "C"))
+    {
+      bubblesort_CGPA(Dstudent, 100);
+    }
+    else if ((userInStu == "r")||(userInStu == "R"))
+    {
+      bubblesort_ResearchScore(Dstudent, 100);
+    }
+    else if ((userInStu == "f")||(userInStu == "F"))
+    {
+      bubblesort_FirstName(Dstudent, 100);
+    }
+    else if ((userInStu == "l")||(userInStu == "L"))
+    {
+      bubblesort_LastName(Dstudent, 100);
+    }
+    else
+    {
+      cout << "INPUT ERROR\n";
+      goto tryagain;
+    }
+  }
   else
   {
     cout << "INPUT ERROR\n";
     goto retry;
   }
-  tryagain:
-  cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
-  cin >> userInComp;
-  cout << endl;
-  if ((userInStu == "c")||(userInStu == "C"))
-  {}
-  else if ((userInStu == "r")||(userInStu == "R"))
-  {}
-  else if ((userInStu == "f")||(userInStu == "F"))
-  {}
-  else if ((userInStu == "l")||(userInStu == "L"))
-  {}
-  else
-  {
-    cout << "INPUT ERROR\n";
-    goto tryagain;
-  }
-
   return 0;
 }
