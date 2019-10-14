@@ -65,7 +65,6 @@ int main(){
     Dstudent[counter1].setlname(lastName);
     Dstudent[counter1].setCGPA(cgpa);
     Dstudent[counter1].setscore(researchScore);
-    Dstudent[counter1].setID(ID_count);
     Dstudent[counter1].setprovince(province);
 
     //cout << counter1+1 << " " << Dstudent[counter1];
@@ -92,11 +91,6 @@ int main(){
   //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
   while( getline(internationalFile, line) ) {
-    /*process each line, get each field separated by a comma.
-     *We use istringstream to handle it.
-     *Note in this example code here, we assume the file format
-     *is perfect and do NOT handle error cases.*/
-    //make the string from the line in the file into a istringstream to be able to parse the data
     istringstream ss(line);
     //Declair variables to hold the data parsed from the file/lines
     string firstName, lastName, s_cgpa, s_researchScore, country, s_read, s_listen, s_speak, s_write;
@@ -126,7 +120,6 @@ int main(){
     Istudent[counter2].setID(ID_count);
     Istudent[counter2].setcountry(country);
     Istudent[counter2].settoefl(read,write,listen,speak);
-    Istudent[counter2].setID(ID_count);
 
     //cout << counter2+1 << " " << Istudent[counter2];
     //print the student info to the screen
@@ -159,7 +152,7 @@ int main(){
     cout << endl;
     if ((userInComp == "c")||(userInComp == "C"))
     {
-      bubblesort_CGPA(Dstudent, sizeD);
+      Dbubblesort_CGPA(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
@@ -167,7 +160,7 @@ int main(){
     }
     else if ((userInComp == "r")||(userInComp == "R"))
     {
-      bubblesort_ResearchScore(Dstudent, sizeD);
+      Dbubblesort_ResearchScore(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
@@ -175,7 +168,7 @@ int main(){
     }
     else if ((userInComp == "f")||(userInComp == "F"))
     {
-      bubblesort_FirstName(Dstudent, sizeD);
+      Dbubblesort_FirstName(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
@@ -183,7 +176,7 @@ int main(){
     }
     else if ((userInComp == "l")||(userInComp == "L"))
     {
-      bubblesort_LastName(Dstudent, sizeD);
+      Dbubblesort_LastName(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
         cout << (Dstudent+k);
@@ -203,7 +196,7 @@ int main(){
     cout << endl;
     if ((userInComp == "c")||(userInComp == "C"))
     {
-      bubblesort_CGPA(Istudent, sizeI);
+      Ibubblesort_CGPA(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
       {
         cout << (Istudent+k);
@@ -211,7 +204,7 @@ int main(){
     }
     else if ((userInComp == "r")||(userInComp == "R"))
     {
-      bubblesort_ResearchScore(Istudent, sizeI);
+      Ibubblesort_ResearchScore(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
       {
         cout << (Istudent+k);
@@ -219,7 +212,7 @@ int main(){
     }
     else if ((userInComp == "f")||(userInComp == "F"))
     {
-      bubblesort_FirstName(Istudent, sizeI);
+      Ibubblesort_FirstName(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
       {
         cout << (Istudent+k);
@@ -228,7 +221,7 @@ int main(){
     else if ((userInComp == "l")||(userInComp == "L"))
     {
       cout << "test if\n";
-      bubblesort_LastName(Istudent, sizeI);
+      Ibubblesort_LastName(Istudent, sizeI);
       cout << "test sort\n";
       for(int k=0; k < sizeI; k++)
       {
