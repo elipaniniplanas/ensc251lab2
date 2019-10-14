@@ -497,7 +497,7 @@ void bubblesort_FirstName(STUDENT *arr, int n) // n is the number of elements in
       }
     }
 }
-void bubblesort_LastName(STUDENT arr[], int n) // n is the number of elements in the array
+void bubblesort_LastName(STUDENT *arr, int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
