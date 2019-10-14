@@ -53,7 +53,7 @@ public:
   friend void bubblesort_CGPA(STUDENT*, int);
   friend void bubblesort_ResearchScore(STUDENT*, int);
   friend void bubblesort_FirstName(STUDENT*, int);
-  friend void bubblesort_LastName(STUDENT*, int);
+  friend void bubblesort_LastName(STUDENT *arr , int n);
 
 private:
         string fname;//first name
