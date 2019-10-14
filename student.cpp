@@ -497,14 +497,14 @@ void domesticOverallSort(DomesticStudent *arr, int n)
     disorganized = false;
     for (j = 0; j < n-i-1; j++)
     {
-      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")
+      if (compareResearchScore(arr[j], arr[j+1]) == "less")
       {
         Dswap(&arr[j], &arr[j+1]);
         disorganized = true;
       }
       else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
       {
-        if (compareCGPA(arr[j], arr[j+1]) == "lesser")
+        if (compareCGPA(arr[j], arr[j+1]) == "less")
         {
           Dswap(&arr[j], &arr[j+1]);
           disorganized = true;
@@ -648,14 +648,14 @@ void internationalOverallSort(InternationalStudent *arr, int n)
     disorganized = false;
     for (j = 0; j < n-i-1; j++)
     {
-      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")
+      if (compareResearchScore(arr[j], arr[j+1]) == "less")
       {
         Iswap(&arr[j], &arr[j+1]);
         disorganized = true;
       }
       else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
       {
-        if (compareCGPA(arr[j], arr[j+1]) == "lesser")
+        if (compareCGPA(arr[j], arr[j+1]) == "less")
         {
           Iswap(&arr[j], &arr[j+1]);
           disorganized = true;
