@@ -233,7 +233,6 @@ int main(){
       for(int k=0; k < sizeI; k++)
       {
         cout << "test loop\n";
-        cout << (Istudent+k);
       }
     }
     else
