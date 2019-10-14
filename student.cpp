@@ -695,12 +695,12 @@ void internationalOverallSort(InternationalStudent *arr, int n)
     }
     if((arr+k)->gettoeflspeak() < 20)
     {
-      deleteElement(arr, n, k);
+      deleteIelement(arr, n, k);
       goto redo;
     }
     if((arr+k)->gettotal() < 93)
     {
-      deleteElement(arr, n, k);
+      deleteIelement(arr, n, k);
       goto redo;
     }
   }
