@@ -5,7 +5,7 @@
 //ToeflScore constructor
 ToeflScore::ToeflScore(int read, int write, int listen, int speak)
 {
-  //Error checking to make sure the values are in range
+  //Error checking to make sure the values are in range, if not, set value to 0
   if(read <0 || read > 30)
   {
           cout << "Reading toeflScore is invalid, setting value to zero\n";
@@ -52,7 +52,6 @@ ToeflScore::ToeflScore()
         speaking = 0;
         totalscore = 0;
 }
-//Below are the mutator functions for the ToeflScore class
 //Below are the mutator functions for the ToeflScore class
 void ToeflScore::setreading(int read)
 {
@@ -127,8 +126,7 @@ int ToeflScore::gettotalscore() const
 {
         return(totalscore);
 }
-
-//Student constructor
+//Student constructors
 STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
 {
         //Error checking, making sure that the proper values are in range
@@ -240,15 +238,6 @@ string DomesticStudent::getprovince() const
 {
         return(province);
 }
-
-/*ostream& operator <<(ostream& outs, const DomesticStudent& p)
-{
-        outs << "Domestic student" << " " << p.getfname() << " "
-	 << p.getlname() << " from " << p.getprovince() << " province has cgpa of "
-	 << p.getCGPA() << ", and research score of " << p.getscore() << ", the assigned ID is "
-	 << p.getID() << endl;
-}
-*/
 //Constructor for the InternationalStudent class
 InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak):
         STUDENT(first, last, cgpa, score, id)
@@ -301,6 +290,16 @@ string InternationalStudent::getcountry() const
 {
         return(country);
 }
+//Overloaded << operator for Domesticstudents
+ostream& operator<<(ostream& outs, const DomesticStudent& dstu)
+{
+	outs << "Domestic student" << " " << dstu.getfname() << " "
+	 << dstu.getlname() << " from " << dstu.getprovince() << " province has cgpa of "
+	 << dstu.getCGPA() << ", and research score of " << dstu.getscore()
+	 << ", the assigned ID is " << dstu.getID() << endl;
+   return(outs);
+}
+//Overloaded << operator for InternationalStudents
 ostream& operator<<(ostream& outs, const InternationalStudent& istu)
 {
 	outs << "International student" << " " << istu.getfname() << " "
@@ -312,15 +311,7 @@ ostream& operator<<(ostream& outs, const InternationalStudent& istu)
 	 << istu.gettotal() <<endl;
    return(outs);
 }
-ostream& operator<<(ostream& outs, const DomesticStudent& dstu)
-{
-	outs << "Domestic student" << " " << dstu.getfname() << " "
-	 << dstu.getlname() << " from " << dstu.getprovince() << " province has cgpa of "
-	 << dstu.getCGPA() << ", and research score of " << dstu.getscore()
-	 << ", the assigned ID is " << dstu.getID() << endl;
-   return(outs);
-}
-
+//Student's friend functions
 string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
 {
         STUDENT result1,result2;
@@ -391,6 +382,7 @@ string compareLastName(STUDENT overalllname1, STUDENT overalllname2)
                 return "equal";
         }
 }
+//friend functions for DomesticStudents
 string compareProvince(DomesticStudent overallProv1, DomesticStudent overallProv2)
 {
         if (overallProv1.province < overallProv2.province)
@@ -406,6 +398,142 @@ string compareProvince(DomesticStudent overallProv1, DomesticStudent overallProv
                 return "equal";
         }
 }
+void Dswap(DomesticStudent *xp, DomesticStudent *yp)
+{
+    DomesticStudent temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+void deleteDelement(DomesticStudent *arr, int n, int del)
+{
+  int i, j;
+  for(int j=del; j<(n-2); j++)
+			{
+				arr[j]=arr[j+1];
+			}
+}
+void Dbubblesort_CGPA(DomesticStudent *arr, int n)
+{
+  int i, j;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = false;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareCGPA((arr[j]), (arr[j+1])) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+      {
+        Dswap(&arr[j], &arr[j+1]);
+        disorganized = true;
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
+void Dbubblesort_ResearchScore(DomesticStudent *arr, int n)
+{
+  int i, j;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = false;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareResearchScore(arr[j], arr[j+1]) == "less")   //(arr[j] < arr[j+1]) //change this with the compare function
+      {
+        Dswap(&arr[j], &arr[j+1]);
+        disorganized = true;
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
+void Dbubblesort_FirstName(DomesticStudent *arr, int n)
+{
+  int i, j;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = false;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareFirstName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+      {
+        Dswap(&arr[j], &arr[j+1]);
+        disorganized = true;
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
+void Dbubblesort_LastName(DomesticStudent *arr , int n)
+{
+  int i, j;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = false;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+      {
+        Dswap(&arr[j], &arr[j+1]);
+        disorganized = true;
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
+void domesticOverallSort(DomesticStudent *arr, int n)
+{
+  int i, j, k;
+  bool disorganized;
+  for (i = 0; i < n-1; i++)
+  {
+    disorganized = false;
+    for (j = 0; j < n-i-1; j++)
+    {
+      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")
+      {
+        Dswap(&arr[j], &arr[j+1]);
+        disorganized = true;
+      }
+      else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
+      {
+        if (compareCGPA(arr[j], arr[j+1]) == "lesser")
+        {
+          Dswap(&arr[j], &arr[j+1]);
+          disorganized = true;
+        }
+        else if (compareCGPA(arr[j], arr[j+1]) == "equal")
+        {
+          if (compareProvince(arr[j], arr[j+1]) == "greater")  
+          {
+            Dswap(&arr[j], &arr[j+1]);
+            disorganized = true;
+          }
+        }
+      }
+    }
+    if (!disorganized)
+    {
+      break;
+    }
+  }
+}
+//friend funcitons for InternationalStudents
 string compareCountry(InternationalStudent overallCo1, InternationalStudent overallCo2)
 {
         if (overallCo1.country < overallCo2.country)
@@ -421,29 +549,21 @@ string compareCountry(InternationalStudent overallCo1, InternationalStudent over
                 return "equal";
         }
 }
-void Dswap(DomesticStudent *xp, DomesticStudent *yp)
-{
-    DomesticStudent temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
-void Dbubblesort_CGPA(DomesticStudent *arr, int n)
-{}
-void Dbubblesort_ResearchScore(DomesticStudent *arr, int n)
-{}
-void Dbubblesort_FirstName(DomesticStudent *arr, int n)
-{}
-void Dbubblesort_LastName(DomesticStudent *arr , int n)
-{}
 void Iswap(InternationalStudent *xp, InternationalStudent *yp)
 {
     InternationalStudent temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
-
-//InternationalStudent Friends
-void Ibubblesort_CGPA(InternationalStudent arr[], int n) // n is the number of elements in the array
+void deleteIelement(InternationalStudent *arr, int n, int del)
+{
+  int i, j;
+  for(int j=del; j<(n-2); j++)
+			{
+				arr[j]=arr[j+1];
+			}
+}
+void Ibubblesort_CGPA(InternationalStudent *arr, int n)
 {
     int i, j;
     bool disorganized;
@@ -464,7 +584,7 @@ void Ibubblesort_CGPA(InternationalStudent arr[], int n) // n is the number of e
       }
     }
 }
-void Ibubblesort_ResearchScore(InternationalStudent *arr, int n) // n is the number of elements in the array
+void Ibubblesort_ResearchScore(InternationalStudent *arr, int n)
 {
     int i, j;
     bool disorganized;
@@ -485,7 +605,7 @@ void Ibubblesort_ResearchScore(InternationalStudent *arr, int n) // n is the num
       }
     }
 }
-void Ibubblesort_FirstName(InternationalStudent *arr, int n) // n is the number of elements in the array
+void Ibubblesort_FirstName(InternationalStudent *arr, int n)
 {
     int i, j;
     bool disorganized;
@@ -506,21 +626,17 @@ void Ibubblesort_FirstName(InternationalStudent *arr, int n) // n is the number 
       }
     }
 }
-void Ibubblesort_LastName(InternationalStudent *arr, int n) // n is the number of elements in the array
+void Ibubblesort_LastName(InternationalStudent *arr, int n)
 {
     int i, j;
     bool disorganized;
-    cout << "test funct\n";
     for (i = 0; i < n-1; i++)
     {
       disorganized = false;
-      cout << "test loop1\n";
       for (j = 0; j < n-i-1; j++)
       {
-        cout << "test loop2\n";
         if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
-          cout << "test if funct";
           Iswap(&arr[j], &arr[j+1]);
           disorganized = true;
         }
@@ -531,52 +647,6 @@ void Ibubblesort_LastName(InternationalStudent *arr, int n) // n is the number o
       }
     }
 }
-
-void domesticOverallSort(DomesticStudent *arr, int n)
-{
-  int i, j, k;
-  bool disorganized;
-  for (i = 0; i < n-1; i++)
-  {
-    disorganized = false;
-    for (j = 0; j < n-i-1; j++)
-    {
-      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
-      {
-        Dswap(&arr[j], &arr[j+1]);
-        disorganized = true;
-      }
-      else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
-      {
-        if (compareCGPA(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
-        {
-          Dswap(&arr[j], &arr[j+1]);
-          disorganized = true;
-        }
-        else if (compareCGPA(arr[j], arr[j+1]) == "equal")
-        {
-          if (compareProvince(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
-          {
-            Dswap(&arr[j], &arr[j+1]);
-            disorganized = true;
-          }
-        }
-      }
-    }
-    if (!disorganized)
-    {
-      break;
-    }
-  }
-}
-void deleteElement(InternationalStudent *arr, int n, int del)
-{
-  int i, j;
-  for(int j=del; j<(n-2); j++)
-			{
-				arr[j]=arr[j+1];
-			}
-}
 void internationalOverallSort(InternationalStudent *arr, int n)
 {
   int i, j, k;
@@ -586,21 +656,21 @@ void internationalOverallSort(InternationalStudent *arr, int n)
     disorganized = false;
     for (j = 0; j < n-i-1; j++)
     {
-      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
+      if (compareResearchScore(arr[j], arr[j+1]) == "lesser")
       {
         Iswap(&arr[j], &arr[j+1]);
         disorganized = true;
       }
       else if (compareResearchScore(arr[j], arr[j+1]) == "equal")
       {
-        if (compareCGPA(arr[j], arr[j+1]) == "lesser")   //(arr[j] < arr[j+1]) //change this with the compare function
+        if (compareCGPA(arr[j], arr[j+1]) == "lesser")
         {
           Iswap(&arr[j], &arr[j+1]);
           disorganized = true;
         }
         else if (compareCGPA(arr[j], arr[j+1]) == "equal")
         {
-          if (compareCountry(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
+          if (compareCountry(arr[j], arr[j+1]) == "greater")
           {
             Iswap(&arr[j], &arr[j+1]);
             disorganized = true;

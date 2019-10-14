@@ -1,38 +1,28 @@
 /*
 	AUTHORS: ELI PLANAS AND CHENNY CAO
-	THIS CODE WAS COMPLETED ON SEPT. 25, 2019
+	THIS CODE WAS COMPLETED ON OCT. 13, 2019
 
-	This program opens two files (one domestic and the other international student applicants)
-	and puts their information (names and academic scores) into objects of child classes of the
-	parent class STUDENT.
-	The two child classes created are for domestic student and the other for international students.
-	Each child class have different class members and member functions except for the members and
-	member functions derived from the parent class.
-	An additional class was used (particularly in use with the international student class) called
-	ToeflScore, in which has members that held data about international students' toefl scores and
-	their totals.
 */
 #include <iostream> //cin and cout
 #include <fstream> //file processing
 #include <sstream> //formatted string processing
 #include <cstdlib> //atof and atoi
-#include "student.hpp"
+#include "student.hpp" //header file
 
 int main(){
   //Declare the varibles used throughout the program
   string line; //Used to retrieve a line in the files
-  string userInStu;
-  string userInComp;
-  DomesticStudent Dstudent[100];
-  InternationalStudent Istudent[100];
-  int sizeD;
+  string userInStu; // User input
+  string userInComp; // User input
+  DomesticStudent Dstudent[100]; //Array of DomesticStudent type objects
+  InternationalStudent Istudent[100]; //Array InternationalStudent type objects
+  int sizeD; // Sizes of array
   int sizeI;
-  //DomesticStudent *Dstudent = new DomesticStudent[100]; // Made an array of objects of DomesticStudent class
-  //InternationalStudent *Istudent= new InternationalStudent[100]; // Made an array of objects of InternationalStudent class
 
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
-  if(!domesticFile.is_open()) {
+  if(!domesticFile.is_open())
+  {
     cout << "Unable to open file domestic-stu.txt" << endl;
     return -1;
   }
@@ -42,7 +32,8 @@ int main(){
   int counter1 = 0;
   int counter2 = 0;
 
-  while( getline(domesticFile, line) ) {
+  while( getline(domesticFile, line) )
+  {
     //make the string from the line in the file into a istringstream to be able to parse the data
     istringstream ss(line);
     //Declare variables to hold the data parsed from the file/lines
@@ -59,7 +50,6 @@ int main(){
     researchScore = atoi(s_researchScore.c_str());
 
     // Set all data to the Istudent object with mutator functions
-
     Dstudent[counter1].setID(ID_count);
     Dstudent[counter1].setfname(firstName);
     Dstudent[counter1].setlname(lastName);
@@ -67,32 +57,26 @@ int main(){
     Dstudent[counter1].setscore(researchScore);
     Dstudent[counter1].setprovince(province);
 
-    //cout << counter1+1 << " " << Dstudent[counter1];
-    //print the student info to the screen
-    /*cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " "
-	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
-	 << Dstudent.getCGPA() << ", and research score of " << Dstudent.getscore() << ", the assigned ID is "
-	 << Dstudent.getID() << endl;*/
-    //Generate a new ID and prepare to the next iteration of the loop
     counter1++;
     Dstu_count++;
     ID_count++;
   }
   domesticFile.close();
 
-  //Here begins the proccess of getting and setting the data for international students
   //accessing the international-stu.txt
   ifstream internationalFile("international-stu.txt");
-  if(!internationalFile.is_open()) {
+  if(!internationalFile.is_open())
+  {
     cout << "Unable to open file international-stu.txt" << endl;
     return -1;
   }
   getline(internationalFile, line);//this skips the first line which is about the file format
   //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
-  while( getline(internationalFile, line) ) {
+  while( getline(internationalFile, line) )
+  {
     istringstream ss(line);
-    //Declair variables to hold the data parsed from the file/lines
+    //Declare variables to hold the data parsed from the file/lines
     string firstName, lastName, s_cgpa, s_researchScore, country, s_read, s_listen, s_speak, s_write;
     float cgpa;
     int researchScore, read, listen, speak, write;
@@ -121,16 +105,6 @@ int main(){
     Istudent[counter2].setcountry(country);
     Istudent[counter2].settoefl(read,write,listen,speak);
 
-    //cout << counter2+1 << " " << Istudent[counter2];
-    //print the student info to the screen
-    /*cout << "International student " << Istu_count << " " << Istudent.getfname() << " "
-	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
-	 << Istudent.getCGPA() << ", and research score of " << Istudent.getscore()
-	 << ", the assigned ID is " << Istudent.getID() << ", their toefl scores are: reading "
-	 << Istudent.gettoeflread() << ", writing "<< Istudent.gettoeflwrite() << ", listening "
-	 << Istudent.gettoefllisten() << ", speaking " << Istudent.gettoeflspeak() << ", and their total toefl score is "
-	 << Istudent.gettotal() <<endl;*/
-
     //Generate a new ID and prepare to the next iteration of the loop
     counter2++;
     Istu_count++;
@@ -138,91 +112,98 @@ int main(){
   }
   //close your file
   internationalFile.close();
-  sizeD = sizeof(Dstudent)/sizeof(Dstudent[0]);
+  sizeD = sizeof(Dstudent)/sizeof(Dstudent[0]);// memory the array takes in bytes / the memory of one element of the array in bytes
   sizeI = sizeof(Istudent)/sizeof(Istudent[0]);
-  retry:
-  cout << "Sort:\nDomestic students; type 'D' or 'd'\nInternational students; type 'I' or 'i'\nINPUT: ";
+  retry: //gateway of loop for user input error
+  cout << "What would you like to sort:\nDomestic students; type 'D' or 'd'\nInternational students; type 'I' or 'i'\nINPUT: "; // prompt for user input
   cin >> userInStu;
   cout << endl;
+  //Sort domestic students
   if ((userInStu == "d")||(userInStu == "D"))
   {
-    tryagain1:
-    cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
+    tryagain1: //gateway #1 of loop for user input 2nd error
+    cout << "Sort by students by their:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: "; // prompt for user input
     cin >> userInComp;
     cout << endl;
+    //Sort by CGPA
     if ((userInComp == "c")||(userInComp == "C"))
     {
       Dbubblesort_CGPA(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
-        cout << (Dstudent+k);
+        cout << Dstudent[k];
       }
     }
+    // Sort by research score
     else if ((userInComp == "r")||(userInComp == "R"))
     {
       Dbubblesort_ResearchScore(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
-        cout << (Dstudent+k);
+        cout << Dstudent[k];
       }
     }
+    // Sort by first name
     else if ((userInComp == "f")||(userInComp == "F"))
     {
       Dbubblesort_FirstName(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
-        cout << (Dstudent+k);
+        cout << Dstudent[k];
       }
     }
+    // Sort by last name
     else if ((userInComp == "l")||(userInComp == "L"))
     {
       Dbubblesort_LastName(Dstudent, sizeD);
       for(int k=0; k < sizeD; k++)
       {
-        cout << (Dstudent+k);
+        cout << Dstudent[k];
       }
     }
     else
     {
       cout << "INPUT ERROR\n";
-      goto tryagain1;
+      goto tryagain1; // gateway #1 of loop for user input 2nd error
     }
   }
   else if ((userInStu == "i")||(userInStu == "I"))
   {
-    tryagain2:
+    tryagain2: //gateway #2 of loop for user input 2nd error
     cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
     cin >> userInComp;
     cout << endl;
+    // Sort by CGPA
     if ((userInComp == "c")||(userInComp == "C"))
     {
       Ibubblesort_CGPA(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
       {
-        cout << (Istudent+k);
+        cout << Istudent[k];
       }
     }
+    // Sort by reseach score
     else if ((userInComp == "r")||(userInComp == "R"))
     {
       Ibubblesort_ResearchScore(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
       {
-        cout << (Istudent+k);
+        cout << Istudent[k];
       }
     }
+    // Sort by first name
     else if ((userInComp == "f")||(userInComp == "F"))
     {
       Ibubblesort_FirstName(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
       {
-        cout << (Istudent+k);
+        cout << Istudent[k];
       }
     }
+    // Sort by last name
     else if ((userInComp == "l")||(userInComp == "L"))
     {
-      cout << "test if\n";
       Ibubblesort_LastName(Istudent, sizeI);
-      cout << "test sort\n";
       for(int k=0; k < sizeI; k++)
       {
         cout << Istudent[k];
@@ -231,13 +212,13 @@ int main(){
     else
     {
       cout << "INPUT ERROR\n";
-      goto tryagain2;
+      goto tryagain2; //gateway #2 of loop for user input 2nd error
     }
   }
   else
   {
     cout << "INPUT ERROR\n";
-    goto retry;
+    goto retry; //gateway of loop for user input error
   }
   return 0;
 }
