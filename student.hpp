@@ -84,7 +84,7 @@ public:
         friend void Dswap(DomesticStudent*, DomesticStudent*);
         /*Input: Pointer to two objects of DomesticStudents type
           Output: Causes the pointers to switch addresses */
-        friend void deleteDelement(InternationalStudent *arr, int n, int k);
+        friend void deleteDelement(DomesticStudent *arr, int n, int k);
         /*Input: Pointer to array of objects of DomesticStudents type, size of array, position of element to be deleted
           Output: Causes the pointers to switch addresses */
         friend void domesticOverallSort(DomesticStudent *arr, int n);
