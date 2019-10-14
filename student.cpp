@@ -680,17 +680,17 @@ void internationalOverallSort(InternationalStudent *arr, int n)
     redo:
     if((arr+k)->gettoeflread() < 20)
     {
-      deleteElement(arr, n, k);
+      deleteIelement(arr, n, k);
       goto redo;
     }
     if((arr+k)->gettoeflwrite() < 20)
     {
-      deleteElement(arr, n, k);
+      deleteIelement(arr, n, k);
       goto redo;
     }
     if((arr+k)->gettoefllisten() < 20)
     {
-      deleteElement(arr, n, k);
+      deleteIelement(arr, n, k);
       goto redo;
     }
     if((arr+k)->gettoeflspeak() < 20)
