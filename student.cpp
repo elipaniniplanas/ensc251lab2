@@ -506,10 +506,9 @@ void bubblesort_LastName(STUDENT *arr, int n) // n is the number of elements in 
     {
       disorganized = false;
       cout << "test loop1\n";
-      for (j = 0; j < n-i
-        -1; j++)
+      for (j = 0; j < n-i-1; j++)
       {
-        cout << "test loop2\n"<< arr[j].lname;
+        cout << "test loop2\n"<< arr[].lname;
         //if (arr[j].lname > arr[j+1].lname)   //(arr[j] < arr[j+1]) //change this with the compare function
         /*{
           cout << "test if funct";
