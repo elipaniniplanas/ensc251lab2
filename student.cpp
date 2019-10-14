@@ -397,7 +397,7 @@ string compareProvince(DomesticStudent overallProv1, DomesticStudent overallProv
         {
                 return "less";
         }
-        else if (overallProv1.province > overallscore2.province)
+        else if (overallProv1.province > overallProv2.province)
         {
                 return "greater";
         }
