@@ -404,14 +404,6 @@ void Dswap(DomesticStudent *xp, DomesticStudent *yp)
     *xp = *yp;
     *yp = temp;
 }
-void deleteDelement(DomesticStudent *arr, int n, int del)
-{
-  int i, j;
-  for(int j=del; j<(n-2); j++)
-			{
-				arr[j]=arr[j+1];
-			}
-}
 void Dbubblesort_CGPA(DomesticStudent *arr, int n)
 {
   int i, j;
@@ -519,7 +511,7 @@ void domesticOverallSort(DomesticStudent *arr, int n)
         }
         else if (compareCGPA(arr[j], arr[j+1]) == "equal")
         {
-          if (compareProvince(arr[j], arr[j+1]) == "greater")  
+          if (compareProvince(arr[j], arr[j+1]) == "greater")
           {
             Dswap(&arr[j], &arr[j+1]);
             disorganized = true;

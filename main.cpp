@@ -122,7 +122,7 @@ int main(){
   if ((userInStu == "d")||(userInStu == "D"))
   {
     tryagain1: //gateway #1 of loop for user input 2nd error
-    cout << "Sort by students by their:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: "; // prompt for user input
+    cout << "Sort by students by their:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nOverall; type 'O' or 'o'\nINPUT: "; // prompt for user input
     cin >> userInComp;
     cout << endl;
     //Sort by CGPA
@@ -161,6 +161,14 @@ int main(){
         cout << Dstudent[k];
       }
     }
+    else if ((userInComp == "o")||(userInComp == "O"))
+    {
+      domesticOverallSort(Dstudent, sizeD);
+      for(int k=0; k < sizeD; k++)
+      {
+        cout << Dstudent[k];
+      }
+    }
     else
     {
       cout << "INPUT ERROR\n";
@@ -170,7 +178,7 @@ int main(){
   else if ((userInStu == "i")||(userInStu == "I"))
   {
     tryagain2: //gateway #2 of loop for user input 2nd error
-    cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nINPUT: ";
+    cout << "Sort by:\nCGPA; type 'C' or 'c'\nResearch Score; type 'R' or 'r'\nFirst name; type 'F' or 'f'\nLast name; type 'L' or 'l'\nOverall; type 'O' or 'o'\nINPUT: ";
     cin >> userInComp;
     cout << endl;
     // Sort by CGPA
@@ -205,6 +213,14 @@ int main(){
     {
       Ibubblesort_LastName(Istudent, sizeI);
       for(int k=0; k < sizeI; k++)
+      {
+        cout << Istudent[k];
+      }
+    }
+    else if ((userInComp == "o")||(userInComp == "O"))
+    {
+      internationalOverallSort(Istudent, sizeD);
+      for(int k=0; k < sizeD; k++)
       {
         cout << Istudent[k];
       }
