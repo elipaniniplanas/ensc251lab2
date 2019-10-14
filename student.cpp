@@ -427,6 +427,14 @@ void Dswap(DomesticStudent *xp, DomesticStudent *yp)
     *xp = *yp;
     *yp = temp;
 }
+void Dbubblesort_CGPA(DomesticStudent *arr, int n)
+{}
+void Dbubblesort_ResearchScore(DomesticStudent *arr, int n)
+{}
+void Dbubblesort_FirstName(DomesticStudent *arr, int n)
+{}
+void Dbubblesort_LastName(DomesticStudent *arr , int n)
+{}
 void Iswap(InternationalStudent *xp, InternationalStudent *yp)
 {
     InternationalStudent temp = *xp;
