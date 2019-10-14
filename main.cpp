@@ -225,7 +225,7 @@ int main(){
       cout << "test sort\n";
       for(int k=0; k < sizeI; k++)
       {
-        cout << "test loop\n";
+        cout << Istudent[k];
       }
     }
     else
