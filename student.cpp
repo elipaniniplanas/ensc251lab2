@@ -393,14 +393,11 @@ string compareLastName(STUDENT overalllname1, STUDENT overalllname2)
 }
 string compareProvince(DomesticStudent overallProv1, DomesticStudent overallProv2)
 {
-        DomesticStudent result1, result2;
-        result1.province = overallProv1.province;
-        result2.province = overallProv2.province;
-        if (result1.province < result2.province)
+        if (overallProv1.province < overallProv2.province)
         {
                 return "less";
         }
-        else if (result1.province > result2.province)
+        else if (overallProv1.province > overallscore2.province)
         {
                 return "greater";
         }
@@ -411,14 +408,11 @@ string compareProvince(DomesticStudent overallProv1, DomesticStudent overallProv
 }
 string compareCountry(InternationalStudent overallCo1, InternationalStudent overallCo2)
 {
-        InternationalStudent result1,result2;
-        result1.country = overallCo1.country;
-        result2.country = overallCo2.country;
-        if (result1.country < result2.country)
+        if (overallCo1.country < overallCo2.country)
         {
                 return "less";
         }
-        else if (result1.country > result2.country)
+        else if (overallCo1.country > overallCo2.country)
         {
                 return "greater";
         }
@@ -429,7 +423,7 @@ string compareCountry(InternationalStudent overallCo1, InternationalStudent over
 }
 void Dswap(DomesticStudent *xp, DomesticStudent *yp)
 {
-    InternationalStudent temp = *xp;
+    DomesticStudent temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
@@ -462,7 +456,7 @@ void Ibubblesort_CGPA(InternationalStudent arr[], int n) // n is the number of e
       }
     }
 }
-void Ibubblesort_ResearchScore(STUDENT *arr, int n) // n is the number of elements in the array
+void Ibubblesort_ResearchScore(InternationalStudent *arr, int n) // n is the number of elements in the array
 {
     int i, j;
     bool disorganized;
@@ -483,10 +477,9 @@ void Ibubblesort_ResearchScore(STUDENT *arr, int n) // n is the number of elemen
       }
     }
 }
-void Ibubblesort_FirstName(STUDENT *arr, int n) // n is the number of elements in the array
+void Ibubblesort_FirstName(InternationalStudent *arr, int n) // n is the number of elements in the array
 {
     int i, j;
-    STUDENT a, b;
     bool disorganized;
     for (i = 0; i < n-1; i++)
     {
@@ -516,7 +509,7 @@ void Ibubblesort_LastName(InternationalStudent *arr, int n) // n is the number o
       cout << "test loop1\n";
       for (j = 0; j < n-i-1; j++)
       {
-        cout << "test loop2\n"<< arr[].lname;
+        cout << "test loop2\n";
         if (compareLastName(arr[j], arr[j+1]) == "greater")   //(arr[j] < arr[j+1]) //change this with the compare function
         {
           cout << "test if funct";
