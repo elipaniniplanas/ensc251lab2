@@ -550,7 +550,7 @@ void Iswap(InternationalStudent *xp, InternationalStudent *yp)
 void deleteIelement(InternationalStudent *arr, int n, int del)
 {
   int i, j;
-  for(int j=del; j<(n-2); j++)
+  for(int j=del; j<(n-1); j++)
 			{
 				arr[j]=arr[j+1];
 			}
@@ -641,7 +641,8 @@ void Ibubblesort_LastName(InternationalStudent *arr, int n)
 }
 void internationalOverallSort(InternationalStudent *arr, int n)
 {
-  int i, j, k;
+  int i, j, k, counter;
+  counter = 0;
   bool disorganized;
   for (i = 0; i < n-1; i++)
   {
@@ -683,25 +684,35 @@ void internationalOverallSort(InternationalStudent *arr, int n)
       deleteIelement(arr, n, k);
       goto redo;
     }
-    if((arr+k)->gettoeflwrite() < 20)
+    else if((arr+k)->gettoeflwrite() < 20)
     {
       deleteIelement(arr, n, k);
       goto redo;
     }
-    if((arr+k)->gettoefllisten() < 20)
+    else if((arr+k)->gettoefllisten() < 20)
     {
       deleteIelement(arr, n, k);
       goto redo;
     }
-    if((arr+k)->gettoeflspeak() < 20)
+    else if((arr+k)->gettoeflspeak() < 20)
     {
       deleteIelement(arr, n, k);
       goto redo;
     }
-    if((arr+k)->gettotal() < 93)
+    else if((arr+k)->gettotal() < 93)
     {
       deleteIelement(arr, n, k);
       goto redo;
+    }
+    else
+    {
+      counter++;
     }
   }
+  InternationalStudent temp[counter];
+  for (k = 0; k < counter; k++)
+  {
+    temp[k] = arr[k];
+  }
+  arr = temp;
 }
